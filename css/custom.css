@@ -25,8 +25,7 @@
 .dropdown-menu > .active > a,
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .active > a {
-    background-image: linear-gradient(to bottom right, #1FB6FF, #28F0C0) !important;
-    background-color: #1FB6FF !important;
+   
     border-color: #12a5c8 !important;
     color: #ffffff !important;
 }
@@ -46,9 +45,17 @@
 #home {
     background:
         linear-gradient(135deg, rgba(31,182,255,0.6), rgba(40,240,192,0.6)),
-        url('uploads/your-image.jpg') center center/cover no-repeat;
+        url('D:\IISPL\flaxseo-master\uploads\your-image.jpg') center center/cover no-repeat;
     min-height: 500px;
     display: flex;
     align-items: center;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #083b44;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #1FB6FF, #28F0C0);
+  border: none;
+  color: white;
+}
