@@ -85,6 +85,10 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 905f0ea8e9b7ff5b85d71ee88268b9ce456fff05
 #preloader{
     position: fixed;
     top: 0;
@@ -117,5 +121,8 @@ body.seo_version #preloader{
         text-align: justify;
         letter-spacing: 0.3px;
 }    
+<<<<<<< HEAD
 
+=======
+>>>>>>> 905f0ea8e9b7ff5b85d71ee88268b9ce456fff05
 

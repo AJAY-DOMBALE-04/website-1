@@ -36,6 +36,161 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+  
+/* ===============================
+   INFRASTRUCTURE CARD STYLE
+   =============================== */
+
+.infra-card {
+    background: #f2f3f4;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Hover effect */
+.infra-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* Card headings */
+.infra-card h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 15px;
+}
+
+/* Orange highlight bar */
+.infra-card h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 5px;
+    height: 20px;
+    background-color: #e8850b;
+    border-radius: 2px;
+}
+
+/* List styling */
+.infra-card ul {
+    padding-left: 18px;
+}
+
+.infra-card ul li {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* ===============================
+   INFRASTRUCTURE EQUAL HEIGHT CARDS
+   =============================== */
+
+/* Make columns flex */
+.infra-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Make columns stretch equally */
+.infra-row > [class*="col-"] {
+    display: flex;
+}
+
+/* Card full height */
+.infra-card {
+    background: #e5f4f2;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+
+    /* KEY PART */
+    width: 100%;
+    min-height: 320px;   /* same size */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover effect */
+.infra-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* Card heading */
+.infra-card h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 15px;
+}
+
+/* Orange highlight */
+.infra-card h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 5px;
+    height: 20px;
+    background-color: #f7941d;
+    border-radius: 2px;
+}
+
+/* Card list */
+.infra-card ul {
+    padding-left: 18px;
+}
+
+.infra-card ul li {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Reduce space between cloud and infrastructure section */
+
+#infrastructure {
+    padding-top: 40px !important;
+    margin-top: -80px;
+}
+
+/* ===============================
+   INFRASTRUCTURE CARD CONTENT SIZE
+   =============================== */
+
+/* Card heading */
+.infra-card h4 {
+    font-size: 20px;       /* increase heading size */
+    font-weight: 700;
+}
+
+/* Card list text */
+.infra-card ul li {
+    font-size: 17px;       /* increase content size */
+    line-height: 1.8;     /* better readability */
+}
+
+/* Optional: paragraph text inside cards */
+.infra-card p {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+
+</style>
+
 </head>
 <body class="seo_version">
 
@@ -88,7 +243,7 @@
 
     <div class="all-page-title" style="background-image:url(images/pattern-4.png);">
         <div class="container text-center">
-            <h1>Services</h1>
+            <h1>Infrastructure</h1>
         </div>
 		<!--Page -->
         <div class="page-info">
@@ -96,7 +251,7 @@
             	<div class="inner-container">
                     <ul class="bread-crumb">
                         <li><a href="index.html">Home</a></li>
-                        <li><span>Services</span></li>
+                        <li><span>Infrastructure<span></li>
                     </ul>
                 </div>
             </div>
@@ -129,194 +284,105 @@
         </path>
     </svg>
 
-    <div id="services" class="section wb">
-        <div class="container">
-            <div class="section-title text-center">
-                <small>OnePage SEO - Validation - BACKLINKS</small>
-                <h3>SEO Services</h3>
-                <p class="lead">We offer unlimited solutions to all your business needs. in the installation package we prepare search engine optimization, social media support, we provide corporate identity and graphic design services.</p>
-            </div><!-- end title -->
-            <div class="row text-center">
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="service-widget">
-                        <div class="post-media wow fadeIn">
-                            <img src="uploads/seo_01.png" alt="" class="img-responsive img-rounded">
-                        </div>
-                        <h3>SEO Optimization</h3>
-                        <p>Aliquam sagittis ligula et sem lacinia, ut facilisis enim sollicitudin. Proin nisi est, convallis nec purus vitae, iaculis posuere sapien. Cum sociis natoque.</p>
-                    </div><!-- end service -->
-                </div><!-- end col -->
+  <div id="infrastructure" class="section wb">
+    <div class="container">
 
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="service-widget">
-                        <div class="post-media wow fadeIn">
-                            <img src="uploads/seo_02.png" alt="" class="img-responsive img-rounded">
-                        </div>
-                        <h3>Backlink Management</h3>
-                        <p>Duis at tellus at dui tincidunt scelerisque nec sed felis. Suspendisse id dolor sed leo rutrum euismod. Nullam vestibulum fermentum erat. It nam auctor. </p>
-                    </div><!-- end service -->
-                </div><!-- end col -->
+        <!-- SECTION TITLE -->
+        <div class="section-title text-center">
+            
+            <h3><b>
+                Our strategically located manufacturing facilities ensure efficient logistics,
+                advanced production capabilities, and nationwide supply support.</b>
+            </h3>
+        </div>
 
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="service-widget">
-                        <div class="post-media wow fadeIn">
-                            <img src="uploads/seo_03.png" alt="" class="img-responsive img-rounded">
-                        </div>
-                        <h3>Pay Per Click</h3>
-                        <p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet lacus vitae massa sodales aliquam at eget quam. Integer ultricies et magna quis accumsan.</p>
-                    </div><!-- end service -->
-                </div><!-- end col -->
-            </div><!-- end row -->
+        <div class="row">
+         <div class="row infra-row">
 
-            <hr class="invis">
+            <!-- Manufacturing Footprint -->
+            <div class="col-md-4">
+                <div class="infra-card">
+                    <h4>Manufacturing Footprint</h4>
+                    <ul>
+                        <li>• Pune (Ranjangaon)</li>
+                        <li>• Greater Noida</li>
+                        <li>• Pantnagar (Rudrapur)</li>
+                    </ul>
+                </div>
+            </div>
 
-            <div class="row text-center">
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="service-widget">
-                        <div class="post-media wow fadeIn">
-                            <img src="uploads/seo_04.png" alt="" class="img-responsive img-rounded">
-                        </div>
-                        <h3>Dashboard Statics</h3>
-                        <p>Aliquam sagittis ligula et sem lacinia, ut facilisis enim sollicitudin. Proin nisi est, convallis nec purus vitae, iaculis posuere sapien. Cum sociis natoque.</p>
-                    </div><!-- end service -->
-                </div><!-- end col -->
+            <!-- Pune Facility -->
+            <div class="col-md-4">
+                <div class="infra-card">
+                    <h4>Pune Facility</h4>
+                    <ul>
+                        <li>• 30 Injection molding machines (100–1600T)</li>
+                        <li>• Fan balancing machines</li>
+                        <li>• Hot plate & ultrasonic welding</li>
+                        <li>• Advanced lab & inspection equipment</li>
+                    </ul>
+                </div>
+            </div>
 
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="service-widget">
-                        <div class="post-media wow fadeIn">
-                            <img src="uploads/seo_05.png" alt="" class="img-responsive img-rounded">
-                        </div>
-                        <h3>Onepage SEO</h3>
-                        <p>Duis at tellus at dui tincidunt scelerisque nec sed felis. Suspendisse id dolor sed leo rutrum euismod. Nullam vestibulum fermentum erat. It nam auctor. </p>
-                    </div><!-- end service -->
-                </div><!-- end col -->
+            <!-- Greater Noida Facility -->
+            <div class="col-md-4">
+                <div class="infra-card">
+                    <h4>Greater Noida Facility</h4>
+                    <ul>
+                        <li>• 6 Injection molding machines (180–1000T)</li>
+                        <li>• Fan balancing machines</li>
+                        <li>• Multiple SPMs</li>
+                        <li>• Advanced inspection & testing facilities</li>
+                    </ul>
+                </div>
+            </div>
 
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="service-widget">
-                        <div class="post-media wow fadeIn">
-                            <img src="uploads/seo_06.png" alt="" class="img-responsive img-rounded">
-                        </div>
-                        <h3>Black Hat SEO</h3>
-                        <p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet lacus vitae massa sodales aliquam at eget quam. Integer ultricies et magna quis accumsan.</p>
-                    </div><!-- end service -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
+        </div>
 
-    <section class="section nopad cac text-center">
-        <a href="#"><h3>Interesting our awesome web design services? Just drop an email to us and get quote for free!</h3></a>
-    </section>
+        <div class="row">
 
-    <div id="testimonials" class="section wb">
-        <div class="container">
-            <div class="section-title text-center">
-                <h3>Happy Clients</h3>
-                <p class="lead">We thanks for all our awesome testimonials! There are hundreds of our happy customers! <br>Let's see what others say about Landigoo website template!</p>
-            </div><!-- end title -->
+            <!-- Machines & Capacities -->
+            <div class="col-md-6">
+                <div class="infra-card">
+                    <h4>Machines & Capacities</h4>
+                    <ul>
+                        <li>• 50+ Injection molding machines</li>
+                        <li>• High tonnage capability up to 1600T</li>
+                        <li>• Multiple SPMs for post-molding operations</li>
+                    </ul>
+                </div>
+            </div>
 
-            <div class="row">
-                <div class="col-md-12 col-sm-12">
-                    <div class="testi-carousel owl-carousel owl-theme">
-                        <div class="testimonial clearfix">
-                            <div class="desc">
-                                <h3><i class="fa fa-quote-left"></i> Wonderful Support!</h3>
-                                <p class="lead">They have got my project on time with the competition with a sed highly skilled, and experienced & professional team.</p>
-                            </div>
-                            <div class="testi-meta">
-                                <img src="uploads/testi_01.png" alt="" class="img-responsive alignleft">
-                                <h4>James Fernando <small>- Manager of Racer</small></h4>
-                            </div>
-                            <!-- end testi-meta -->
-                        </div>
-                        <!-- end testimonial -->
+            <!-- Tool Room Capabilities -->
+            <div class="col-md-6">
+                <div class="infra-card">
+                    <h4>Tool Room Capabilities</h4>
+                    <ul>
+                        <li>• VMC – 1300 × 700 × 700 (2 Nos)</li>
+                        <li>• EDM – 500 × 450 × 300 (2 Nos)</li>
+                        <li>• Lathe, Milling, Grinding & Drilling</li>
+                        <li>• Injection molding tools up to 850T</li>
+                    </ul>
+                </div>
+            </div>
+</div>
+        </div>
 
-                        <div class="testimonial clearfix">
-                            <div class="desc">
-                                <h3><i class="fa fa-quote-left"></i> Awesome Services!</h3>
-                                <p class="lead">Explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you completed.</p>
-                            </div>
-                            <div class="testi-meta">
-                                <img src="uploads/testi_02.png" alt="" class="img-responsive alignleft">
-                                <h4>Jacques Philips <small>- Designer</small></h4>
-                            </div>
-                            <!-- end testi-meta -->
-                        </div>
-                        <!-- end testimonial -->
+    </div>
+</div>
 
-                        <div class="testimonial clearfix">
-                            <div class="desc">
-                                <h3><i class="fa fa-quote-left"></i> Great & Talented Team!</h3>
-                                <p class="lead">The master-builder of human happines no one rejects, dislikes avoids pleasure itself, because it is very pursue pleasure. </p>
-                            </div>
-                            <div class="testi-meta">
-                                <img src="uploads/testi_03.png" alt="" class="img-responsive alignleft">
-                                <h4>Venanda Mercy <small>- Newyork City</small></h4>
-                            </div>
-                            <!-- end testi-meta -->
-                        </div>
-                        <!-- end testimonial -->
-                        <div class="testimonial clearfix">
-                            <div class="desc">
-                                <h3><i class="fa fa-quote-left"></i> Wonderful Support!</h3>
-                                <p class="lead">They have got my project on time with the competition with a sed highly skilled, and experienced & professional team.</p>
-                            </div>
-                            <div class="testi-meta">
-                                <img src="uploads/testi_01.png" alt="" class="img-responsive alignleft">
-                                <h4>James Fernando <small>- Manager of Racer</small></h4>
-                            </div>
-                            <!-- end testi-meta -->
-                        </div>
-                        <!-- end testimonial -->
 
-                        <div class="testimonial clearfix">
-                            <div class="desc">
-                                <h3><i class="fa fa-quote-left"></i> Awesome Services!</h3>
-                                <p class="lead">Explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you completed.</p>
-                            </div>
-                            <div class="testi-meta">
-                                <img src="uploads/testi_02.png" alt="" class="img-responsive alignleft">
-                                <h4>Jacques Philips <small>- Designer</small></h4>
-                            </div>
-                            <!-- end testi-meta -->
-                        </div>
-                        <!-- end testimonial -->
-
-                        <div class="testimonial clearfix">
-                            <div class="desc">
-                                <h3><i class="fa fa-quote-left"></i> Great & Talented Team!</h3>
-                                <p class="lead">The master-builder of human happines no one rejects, dislikes avoids pleasure itself, because it is very pursue pleasure. </p>
-                            </div>
-                            <div class="testi-meta">
-                                <img src="uploads/testi_03.png" alt="" class="img-responsive alignleft">
-                                <h4>Venanda Mercy <small>- Newyork City</small></h4>
-                            </div>
-                            <!-- end testi-meta -->
-                        </div><!-- end testimonial -->
-                    </div><!-- end carousel -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
+    
 
     <div id="support" class="section db">
         <div class="container">
             <div class="section-title text-center">
-                <h3>Clients Logo</h3>
+            <h3>Key Customers</h3>
+         <p class="lead">Our success is built on strong, long-term partnerships with OEMs and Tier-1 automotive suppliers, delivering consistent quality, reliability, and on-time performance.</p>
+
             </div><!-- end title -->
 
-            <div class="row">
-                <div id="logo-carousel" class="owl-carousel">
-					<div> <img src="uploads/logo_01.png" alt=""> </div>
-					<div> <img src="uploads/logo_02.png" alt=""> </div>
-					<div> <img src="uploads/logo_03.png" alt=""> </div>
-					<div> <img src="uploads/logo_04.png" alt=""> </div>
-					<div> <img src="uploads/logo_05.png" alt=""> </div>
-					<div> <img src="uploads/logo_06.png" alt=""> </div>
-					<div> <img src="uploads/logo_01.png" alt=""> </div>
-					<div> <img src="uploads/logo_02.png" alt=""> </div>
-				</div>
-            </div><!-- end row -->
+            <!-- end row -->
         </div><!-- end container -->
     </div><!-- end section -->
 
@@ -346,87 +412,105 @@
     </svg>
 
 	<footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="widget clearfix">
-                        <div class="widget-title">
-                            <img src="images/logos/logo-light.png" alt="">
-                            <small>FlaxSEO Template</small>
-                        </div>
-                        <p> SEO Mauris pharetra quam ut commodo malesuada. Sed a ornare purus, nec cursus tortor. Integer vehicula felis nec nunc pulvinar efficitur. In et semper odio. Sed laoreet ullamcorper augue, ut mattis metus mattis quis.</p>
-                        <p>Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis montes.</p>
-                    </div><!-- end clearfix -->
-                </div><!-- end col -->
+    <div class="container">
+        <div class="row">
 
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="widget clearfix">
-                        <div class="widget-title">
-                            <h3>Contact Details</h3>
-                        </div>
-
-                        <ul class="footer-links">
-                            <li><a href="mailto:#">info@yoursite.com</a></li>
-                            <li><a href="#">www.yoursite.com</a></li>
-                            <li>PO Box 16122 Collins Street West Victoria 8007 Australia</li>
-                            <li>+61 3 8376 6284</li>
-                        </ul><!-- end links -->
-                    </div><!-- end clearfix -->
-                </div><!-- end col -->
-
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <div class="widget clearfix">
-                        <div class="widget-title">
-                            <h3>Information</h3>
-                        </div>
-
-                        <ul class="footer-links">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Pricing</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Faq</a></li>
-							<li><a href="#">Contact</a></li>
-                        </ul><!-- end links -->
-                    </div><!-- end clearfix -->
-                </div><!-- end col -->
-
-                <div class="col-md-2 col-sm-2 col-xs-12">
-                    <div class="widget clearfix">
-                        <div class="widget-title">
-                            <h3>Social</h3>
-                        </div>
-                        <ul class="footer-links social-md">
-                            <li><a class="fb" href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
-                            <li><a class="gi" href="#"><i class="fa fa-github"></i> Github</a></li>
-                            <li><a class="tw" href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
-                            <li><a class="dr" href="#"><i class="fa fa-dribbble"></i> Dribbble</a></li>
-                            <li><a class="pi" href="#"><i class="fa fa-pinterest"></i> Pinterest</a></li>
-                        </ul><!-- end links -->
-                    </div><!-- end clearfix -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </footer><!-- end footer -->
-	
-    <div class="copyrights">
-        <div class="container">
-            <div class="footer-distributed">
-                <div class="footer-left">
-                    <p class="footer-company-name">All Rights Reserved. &copy; 2018 Design By <a href="https://html.design/">html design</a> Distributed By <a href="https://themewagon.com/">ThemeWagon</a></p>
+            <!-- ABOUT COMPANY -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="widget clearfix">
+                    <div class="widget-title">
+                     
+                        <small>Sanjay Techno Plast Pvt. Ltd.</small>
+                    </div>
+                    <p>
+                        Sanjay Techno Plast Pvt. Ltd. is a professionally managed manufacturing company
+                        specializing in automotive and industrial plastic components, delivering
+                        consistent quality, reliability, and on-time performance.
+                    </p>
                 </div>
+            </div><!-- end col -->
 
-                <div class="footer-right">
-                    <form method="get" action="#">
-                        <input placeholder="Subscribe our newsletter.." name="search">
-                        <i class="fa fa-envelope-o"></i>
-                    </form>
+            <!-- CONTACT DETAILS -->
+            <div class="col-md-3 col-sm-3 col-xs-12">
+                <div class="widget clearfix">
+                    <div class="widget-title">
+                        <h3>Contact Details</h3>
+                    </div>
+
+                    <ul class="footer-links">
+                        <li>📍 Pune | Greater Noida | Pantnagar</li>
+                        <li>📞 +91-8292733057</li>
+                        <li>
+                            <a href="mailto:prabhat.kumar@sanjaygroup.in">
+                                prabhat.kumar@sanjaygroup.in
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.sanjaytechnoplast.in" target="_blank">
+                                www.sanjaytechnoplast.in
+                            </a>
+                        </li>
+                    </ul><!-- end links -->
                 </div>
+            </div><!-- end col -->
+
+            <!-- INFORMATION -->
+            <div class="col-md-3 col-sm-3 col-xs-12">
+                <div class="widget clearfix">
+                    <div class="widget-title">
+                        <h3>Information</h3>
+                    </div>
+
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="case-study.html">Case Study</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul><!-- end links -->
+                </div>
+            </div><!-- end col -->
+
+            <!-- SOCIAL -->
+            <div class="col-md-2 col-sm-2 col-xs-12">
+                <div class="widget clearfix">
+                    <div class="widget-title">
+                        <h3>Social</h3>
+                    </div>
+                    <ul class="footer-links social-md">
+                        <li><a class="fb" href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
+                        <li><a class="gi" href="#"><i class="fa fa-github"></i> Github</a></li>
+                        <li><a class="tw" href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
+                        <li><a class="pi" href="#"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+                    </ul><!-- end links -->
+                </div>
+            </div><!-- end col -->
+
+        </div><!-- end row -->
+    </div><!-- end container -->
+</footer><!-- end footer -->
+
+<!-- COPYRIGHTS -->
+<div class="copyrights">
+    <div class="container">
+        <div class="footer-distributed">
+            <div class="footer-left">
+                <p class="footer-company-name">
+                    © Sanjay Techno Plast Pvt. Ltd. All Rights Reserved.
+                </p>
             </div>
-        </div><!-- end container -->
-    </div><!-- end copyrights -->
 
-    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+            <div class="footer-right">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="#" id="scroll-to-top" class="dmtop global-radius">
+    <i class="fa fa-angle-up"></i>
+</a>
+
 
     <!-- ALL JS FILES -->
     <script src="js/all.js"></script>
