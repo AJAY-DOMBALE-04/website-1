@@ -85,3 +85,11 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
 }
 
+.all-page-title {
+    background-color:  #17a8ec; }
+
+.message-box  {
+        text-align: justify;
+        letter-spacing: 0.3px;
+}    
+
