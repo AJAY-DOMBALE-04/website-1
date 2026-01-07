@@ -45,7 +45,7 @@
 #home {
     background:
         linear-gradient(135deg, rgba(31,182,255,0.6), rgba(40,240,192,0.6)),
-        url('D:\IISPL\flaxseo-master\uploads\your-image.jpg') center center/cover no-repeat;
+        url('../uploads/your-image.jpg') center center/cover no-repeat;
     min-height: 500px;
     display: flex;
     align-items: center;
@@ -58,4 +58,34 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(135deg, #1FB6FF, #28F0C0);
   border: none;
   color: white;
+}
+.navbar-nav > li > a.active,
+.navbar-nav > li > a:hover {
+    background: linear-gradient(135deg, #1FB6FF, #28F0C0);
+    color: #fff !important;
+    border-radius: 25px;
+}
+.contact{
+    color: #083b44;
+}
+#home .big-tagline {
+    background: rgba(255,255,255,0.9);   /* white glass-style box */
+    padding: 25px 30px;
+    border-radius: 12px;
+    margin-left: 40px;
+    display: inline-block;
+    max-width: 650px;
+}
+#home .big-tagline h2,
+#home .big-tagline p {
+    color: #0f2c33;
+}
+#home .big-tagline {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
