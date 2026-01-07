@@ -85,7 +85,6 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
 }
 
-<<<<<<< HEAD
 #preloader{
     position: fixed;
     top: 0;
@@ -110,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 body.seo_version #preloader{
     background: linear-gradient(135deg,#1FB6FF,#28F0C0) !important;
 }
-=======
+
 .all-page-title {
     background-color:  #17a8ec; }
 
@@ -118,5 +117,5 @@ body.seo_version #preloader{
         text-align: justify;
         letter-spacing: 0.3px;
 }    
->>>>>>> 1e4eaf70a9ee6b9e4afc75fd569995b7c543db6d
+
 
