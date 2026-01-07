@@ -1,0 +1,54 @@
+.row.justify-content-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.stat-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.product-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-row > div {
+    float: none !important;   /* overrides Bootstrap 3 floats */
+}
+/* PRIMARY THEME COLORS */
+.btn-primary,
+.progress-bar,
+.panel-primary > .panel-heading,
+.navbar-default,
+.dropdown-menu > .active > a,
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .active > a {
+    background-image: linear-gradient(to bottom right, #1FB6FF, #28F0C0) !important;
+    background-color: #1FB6FF !important;
+    border-color: #12a5c8 !important;
+    color: #ffffff !important;
+}
+
+/* Hover state — slightly deeper gradient */
+.btn-primary:hover,
+.navbar-default .navbar-nav > li > a:hover {
+    background-image: linear-gradient(to bottom right, #17a8ec, #1ed9ad) !important;
+    background-color: #17a8ec !important;
+}
+
+/* Remove old button shadows (gives a modern flat look) */
+.btn-primary {
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+#home {
+    background:
+        linear-gradient(135deg, rgba(31,182,255,0.6), rgba(40,240,192,0.6)),
+        url('uploads/your-image.jpg') center center/cover no-repeat;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
