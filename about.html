@@ -27,11 +27,96 @@
     <link rel="stylesheet" href="css/custom.css">
 
     <style>
-        
-/* ===============================
-   FIX HERO IMAGE UNDER NAVBAR
-   =============================== */
 
+/* ==============================
+   ABOUT PAGE – SLIDE ANIMATION
+   ============================== */
+
+.about-block {
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+}
+
+/* Text styling */
+.about-text h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #0b3c5d;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Image styling */
+.about-img {
+    max-width: 90%;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease;
+}
+
+.about-img:hover {
+    transform: scale(1.05);
+}
+
+/* ==============================
+   SLIDE ANIMATION
+   ============================== */
+
+.slide-left,
+.slide-right {
+    opacity: 0;
+    transform: translateX(60px);
+    animation: slideIn 1s ease forwards;
+}
+
+.slide-left {
+    transform: translateX(-60px);
+}
+
+.about-block:nth-child(2) .slide-left,
+.about-block:nth-child(2) .slide-right {
+    animation-delay: 0.2s;
+}
+
+.about-block:nth-child(3) .slide-left,
+.about-block:nth-child(3) .slide-right {
+    animation-delay: 0.4s;
+}
+
+.about-block:nth-child(4) .slide-left,
+.about-block:nth-child(4) .slide-right {
+    animation-delay: 0.6s;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ==============================
+   MOBILE RESPONSIVE
+   ============================== */
+@media (max-width: 768px) {
+    .about-block {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img {
+        margin-top: 20px;
+    }
+
+    .slide-left,
+    .slide-right {
+        transform: translateY(30px);
+    }
+}
 
 
 
@@ -139,6 +224,11 @@
 }
 
 
+
+
+
+
+
     </style>
 
 </head>
@@ -164,7 +254,7 @@
 
 <header class="header header_style_01">
     <nav class="megamenu navbar navbar-default">
-        <div class="container">
+        <div class="container-fluid navbar-flex">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
                     <span class="icon-bar"></span>
@@ -172,7 +262,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.html">
-                    <img src="" alt="image">
+                    <img src="images/sanjay_group_whitebg_curve_1.png" alt="image">
                 </a>
             </div>
 
@@ -227,58 +317,79 @@
             M95 100 Q 100 15 105 100 Z">
         </path>
     </svg>
+<!-- ABOUT US SECTION -->
 
-
-<!-- ABOUT SECTION -->
-<div id="about" class="section wb nopadtop">
+<!-- ABOUT US SECTION -->
+<div id="about" class="section wb">
     <div class="container">
-        <div class="row">
 
-            <div class="col-md-6 m40">
-                <div class="message-box">
-
-                    <h2><b>Company Overview</b></h2>
-                    <p>
-                        <h3>Sanjay Techno Plast Pvt. Ltd. is a professionally managed manufacturing company
-                        specializing in automotive and industrial plastic components. With a strong
-                        foundation in engineering excellence, we deliver customized plastic solutions
-                        that meet global quality standards. Our focus on precision, innovation, and
-                        consistency enables us to support diverse industry requirements with reliability
-                        and efficiency.</h3>
-                    </p>
-
-                    <h2><b>Vision & Core Values</b></h2>
-                    <p>
-                        <h3>Our Vision:</h3>
-                        <h3>To be a preferred global partner for high-quality plastic components through
-                        innovation, reliability, and operational excellence.</h3>
-                    </p>
-                    <p>
-                        <h3>Our Core Values:</h3>
-                       <h3> Commitment to quality, continuous improvement, ethical business practices,
-                        customer satisfaction, and long-term partnerships with OEMs and Tier-1 suppliers.</h3>
-                    </p>
-
-                    <h2>Management Philosophy</h2>
-                    <p>
-                       <h3> Our management philosophy is centered on engineering-driven decision making,
-                        continuous improvement, and customer-focused execution. We believe in empowering
-                        our teams, adopting modern manufacturing practices, and maintaining transparency
-                        to achieve sustainable growth.</h3>
-                    </p>
-
-                </div>
-            </div>
-
-         <div class="col-md-6 about-image-center">
-    <div class="post-media wow fadeIn bounce-img">
-        <img src="images/factory2.jpg" alt="" class="img-responsive img-rounded">
-    </div>
-</div>
-
+        <!-- SECTION TITLE -->
+        <div class="section-title text-center">
+            <h2><b>About Us</b></h2>
+            <p class="lead">
+                Learn more about our company, vision, values, and management philosophy.
+            </p>
         </div>
+
+        <!-- COMPANY OVERVIEW (IMAGE RIGHT) -->
+        <div class="row about-block">
+            <div class="col-md-6 about-text slide-left">
+                <h3>Company Overview</h3>
+                <p>
+                    <strong>Sanjay Techno Plast Pvt. Ltd.</strong> is a professionally managed manufacturing
+                    company specializing in automotive and industrial plastic components.
+                </p>
+                <p>
+                    With a strong foundation in engineering excellence, we deliver customized plastic
+                    solutions that meet global quality standards with precision and reliability.
+                </p>
+            </div>
+            <div class="col-md-6 text-center slide-right">
+                <img src="images/factory2.jpg" class="img-responsive img-rounded about-img" alt="Company Overview">
+            </div>
+        </div>
+
+        <!-- VISION & CORE VALUES (IMAGE LEFT) -->
+        <div class="row about-block">
+            <div class="col-md-6 text-center slide-left">
+                <img src="images/Mold1.png" class="img-responsive img-rounded about-img" alt="Vision & Values">
+            </div>
+            <div class="col-md-6 about-text slide-right">
+                <h3>Vision & Core Values</h3>
+                <p>
+                    <strong>Our Vision:</strong><br>
+                    To be a preferred global partner for high-quality plastic components through
+                    innovation, reliability, and operational excellence.
+                </p>
+                <p>
+                    <strong>Our Core Values:</strong><br>
+                    Quality commitment, continuous improvement, ethical practices, customer satisfaction,
+                    and long-term partnerships.
+                </p>
+            </div>
+        </div>
+
+        <!-- MANAGEMENT PHILOSOPHY (IMAGE RIGHT) -->
+        <div class="row about-block">
+            <div class="col-md-6 about-text slide-left">
+                <h3>Management Philosophy</h3>
+                <p>
+                    Our leadership philosophy is rooted in engineering-driven decision making,
+                    continuous improvement, and customer-focused execution.
+                </p>
+                <p>
+                    We empower teams, adopt modern manufacturing practices, and ensure transparency
+                    for sustainable growth.
+                </p>
+            </div>
+            <div class="col-md-6 text-center slide-right">
+                <img src="images/Sanjaygroup_img_DSC_8593.jpg" class="img-responsive img-rounded about-img" alt="Management">
+            </div>
+        </div>
+
     </div>
 </div>
+
 
 <div id="journey" class="section wb">
     <div class="container">
@@ -495,6 +606,18 @@
 <a href="#" id="scroll-to-top" class="dmtop global-radius">
     <i class="fa fa-angle-up"></i>
 </a>
+
+<script>
+window.addEventListener("scroll", function () {
+    const header = document.querySelector(".header.header_style_01");
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+});
+</script>
+
 
 
 <!-- JS -->

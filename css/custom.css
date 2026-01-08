@@ -503,72 +503,148 @@ body.seo_version #preloader{
     }
 }
 
+/* =====================================
+   PUSH HERO IMAGE BELOW NAVBAR
+   ===================================== */
 
+.all-page-title {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding-top: 120px;   /* 👈 pushes image down */
+    box-sizing: border-box;
+    
+}
+
+
+
+
+
+/* =====================================
+   COMPACT TRANSPARENT NAVBAR (DEFAULT)
+   ===================================== */
+
+/* ===== NAVBAR HEIGHT CONTROL ===== */
 /* ===============================
-   TRANSPARENT NAVBAR STYLE
+   TRANSPARENT NAVBAR (DEFAULT)
    =============================== */
 
-/* Make navbar transparent */
 .header.header_style_01 {
-    background: transparent !important;
-    border: none;
-    box-shadow: none;
-}
-
-/* Remove default navbar background */
-.navbar-default {
-    background: transparent !important;
-    border: none;
-}
-
-/* Menu container spacing */
-.menu-top > li > a {
-    color: #ffffff !important;          /* White text */
-    font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 50px;                /* Pill shape */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    background: transparent;
     transition: all 0.3s ease;
 }
 
-/* Hover effect – white circle */
-.menu-top > li > a:hover {
-    background: #ffffff;
-    color: #000000 !important;
-}
-
-/* Active tab */
-.menu-top > li > a.active {
-    background: #ffffff;
-    color: #000000 !important;
-}
-
-/* Remove underline or default hover styles */
-.menu-top > li > a::after {
-    display: none !important;
-}
-
-/* Navbar brand fix (logo alignment) */
-.navbar-brand img {
-    max-height: 50px;
+/* Navbar links (default on hero image) */
+.header.header_style_01 .menu-top > li > a {
+    color: #ffffff;
+    font-weight: 600;
 }
 
 /* ===============================
-   MOBILE FIX
+   NAVBAR AFTER SCROLL
    =============================== */
 
-@media (max-width: 768px) {
-    .navbar-default {
-        background: #ffffff !important;
-    }
-
-    .menu-top > li > a {
-        color: #000000 !important;
-        border-radius: 0;
-    }
-
-    .menu-top > li > a:hover,
-    .menu-top > li > a.active {
-        background: #f2f2f2;
-        color: #000000 !important;
-    }
+.header.header_style_01.scrolled {
+    background: rgba(255, 255, 255, 0.95); /* white background */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px); /* glass effect */
 }
+
+/* Change text color after scroll */
+.header.header_style_01.scrolled .menu-top > li > a {
+    color: #0b3c5d; /* dark text */
+}
+
+/* Active tab */
+.header.header_style_01.scrolled .menu-top > li > a.active {
+    background: #0b3c5d;
+    color: #ffffff !important;
+    border-radius: 20px;
+    padding: 8px 16px;
+}
+
+/* Hover effect */
+.header.header_style_01.scrolled .menu-top > li > a:hover {
+    background: rgba(11, 60, 93, 0.08);
+    border-radius: 20px;
+}
+
+
+/* ===== NAVBAR LOGO SIZE FIX ===== */
+
+/* ===============================
+   NAVBAR ALIGNMENT FIX
+   =============================== */
+
+.header_style_01 {
+    position: fixed;              /* keeps navbar on top */
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+/* Make navbar transparent initially */
+.header_style_01 .navbar {
+    background: transparent;
+    border: none;
+    min-height: 64px;             /* reduced height */
+}
+
+/* Container flex alignment */
+.header_style_01 .navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO LEFT */
+.navbar-brand {
+    padding: 0;
+    margin: 0;
+    height: 64px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    max-height: 42px;             /* perfect size */
+    width: auto;
+}
+
+/* MENU RIGHT */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Menu items spacing */
+.navbar-nav > li > a {
+    color: #ffffff;
+    font-weight: 500;
+    padding: 10px 14px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Active tab */
+.navbar-nav > li > a.active {
+    background: rgba(255,255,255,0.25);
+    color: #ffffff;
+}
+
+/* Hover white circle */
+.navbar-nav > li > a:hover {
+    background: rgba(255,255,255,0.35);
+    color: #ffffff;
+}
+
+/* Fix collapse alignment */
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+
