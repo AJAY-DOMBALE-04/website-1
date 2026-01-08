@@ -51,9 +51,7 @@
     align-items: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #083b44;
-}
+
 .btn-primary {
   background: linear-gradient(135deg, #1FB6FF, #28F0C0);
   border: none;
@@ -115,11 +113,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Title alignment */
-#services h3 {
-    min-height: 48px;           /* Keeps text aligned */
-    font-size: 18px;
+.section-title h3 {
+    min-height: 48px;
     margin: 0;
-    color: #083b44;
+    background: linear-gradient(135deg, #1FB6FF, #28F0C0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 
