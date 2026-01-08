@@ -85,12 +85,11 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
 }
 
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> 1894b3a0bf236a989a39cb3d0e9f6825d0a0b03f
+
+
 #preloader{
     position: fixed;
     top: 0;
@@ -178,7 +177,7 @@ body.seo_version #preloader{
     margin: 0 auto 18px;
     border-radius: 2px;
 }
-<<<<<<< HEAD
+
 .timeline {
   position: relative;
   padding: 40px 0;
@@ -298,5 +297,4 @@ body.seo_version #preloader{
     overflow: hidden;
     box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
-=======
->>>>>>> e84471247bc8fbeec09e08da31cedd9da9fd70cd
+
