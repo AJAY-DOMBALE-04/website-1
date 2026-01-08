@@ -387,3 +387,42 @@ body.seo_version #preloader{
 .container-text-center h1{
     color:linear-gradient(135deg, #1FB6FF, #28F0C0);
 }
+/* reset old overlay behaviour */
+.da-thumbs .pitem a div{
+    top: 0;
+    left: 0;
+    height: 50%;                 /* only half image */
+    transform: translateY(-100%);
+    transition: all .35s ease;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0.55)
+    );
+}
+
+/* slide overlay down on hover */
+.da-thumbs .pitem:hover a div{
+    transform: translateY(0);
+}
+
+/* heading ALWAYS visible & sits at top */
+.da-thumbs .pitem a div h3{
+    margin: 0;
+    padding: 10px 12px;
+    background: rgba(0,0,0,.35);
+    display: inline-block;
+    font-size: 18px;
+}
+
+/* description starts hidden */
+.da-thumbs .pitem a div p{
+    opacity: 0;
+    padding: 10px 12px;
+    transition: opacity .3s ease;
+}
+
+/* fade description in only on hover */
+.da-thumbs .pitem:hover a div p{
+    opacity: 1;
+}
