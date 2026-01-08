@@ -72,11 +72,11 @@
     border-radius: 12px;
     margin-left: 40px;
     display: inline-block;
-    max-width: 650px;
+    max-width: 700px;
 }
 #home .big-tagline h2,
 #home .big-tagline p {
-    color: #0f2c33;
+    color: #000000;
 }
 #home .big-tagline {
     animation: fadeInUp 0.8s ease forwards;
@@ -519,86 +519,13 @@ body.seo_version #preloader{
 
 
 
-/* =====================================
-   COMPACT TRANSPARENT NAVBAR (DEFAULT)
-   ===================================== */
-
-/* ===== NAVBAR HEIGHT CONTROL ===== */
-/* ===============================
-   TRANSPARENT NAVBAR (DEFAULT)
-   =============================== */
-
-.header.header_style_01 {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 9999;
-    background: transparent;
-    transition: all 0.3s ease;
-}
-
-/* Navbar links (default on hero image) */
-.header.header_style_01 .menu-top > li > a {
-    color: #ffffff;
-    font-weight: 600;
-}
-
-/* ===============================
-   NAVBAR AFTER SCROLL
-   =============================== */
-
-.header.header_style_01.scrolled {
-    background: rgba(255, 255, 255, 0.95); /* white background */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6px); /* glass effect */
-}
-
-/* Change text color after scroll */
-.header.header_style_01.scrolled .menu-top > li > a {
-    color: #0b3c5d; /* dark text */
-}
-
-/* Active tab */
-.header.header_style_01.scrolled .menu-top > li > a.active {
-    background: #0b3c5d;
-    color: #ffffff !important;
-    border-radius: 20px;
-    padding: 8px 16px;
-}
-
-/* Hover effect */
-.header.header_style_01.scrolled .menu-top > li > a:hover {
-    background: rgba(11, 60, 93, 0.08);
-    border-radius: 20px;
-}
-
-
 /* ===== NAVBAR LOGO SIZE FIX ===== */
 
 /* ===============================
    NAVBAR ALIGNMENT FIX
    =============================== */
 
-.header_style_01 {
-    position: fixed;              /* keeps navbar on top */
-    top: 0;
-    width: 100%;
-    z-index: 999;
-}
 
-/* Make navbar transparent initially */
-.header_style_01 .navbar {
-    background: transparent;
-    border: none;
-    min-height: 64px;             /* reduced height */
-}
-
-/* Container flex alignment */
-.header_style_01 .navbar .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
 /* LOGO LEFT */
 .navbar-brand {
@@ -610,7 +537,7 @@ body.seo_version #preloader{
 }
 
 .navbar-brand img {
-    max-height: 42px;             /* perfect size */
+    max-height: 81px;             /* perfect size */
     width: auto;
 }
 
@@ -641,9 +568,6 @@ body.seo_version #preloader{
     color: #ffffff;
 }
 
-/* Fix collapse alignment */
-.navbar-collapse {
-    flex-grow: 0;
+.nav  li{
+    font-size: 90px;
 }
-
-
