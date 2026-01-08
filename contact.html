@@ -342,6 +342,19 @@
 <a href="#" id="scroll-to-top" class="dmtop global-radius">
     <i class="fa fa-angle-up"></i>
 </a>
+
+    <script>
+window.addEventListener("scroll", function () {
+    const header = document.querySelector(".header.header_style_01");
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+});
+</script>    
+
+
     <!-- ALL JS FILES -->
     <script src="js/all.js"></script>
 	
