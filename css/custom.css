@@ -393,3 +393,66 @@ body.seo_version #preloader{
   background: linear-gradient(135deg,#1FB6FF,#28F0C0);
   box-shadow: 0 6px 16px rgba(0,0,0,.15);
 }
+/* ===============================
+   CONTACT PAGE – THEME OVERRIDES
+================================ */
+
+/* Contact section background */
+#support.section.wb {
+    background: #f7fbfd;
+}
+
+/* Contact form card */
+.contact_form {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(31,182,255,0.15);
+}
+
+/* Inputs */
+.contact_form .form-control {
+    border-radius: 10px;
+    border: 1px solid #e2f2f6;
+    color: #003b44;
+}
+
+.contact_form .form-control:focus {
+    border-color: #1FB6FF;
+    box-shadow: 0 0 0 2px rgba(31,182,255,0.15);
+}
+
+/* Dropdown */
+.bootstrap-select > .btn {
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #e2f2f6;
+}
+
+/* Submit button */
+#submit {
+    background: linear-gradient(135deg,#1FB6FF,#28F0C0);
+    border: none !important;
+    color: #fff !important;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+#submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(31,182,255,0.35);
+}
+
+/* Section headings */
+.section-title h3 {
+    background: linear-gradient(135deg,#1FB6FF,#28F0C0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Map container */
+.map-box {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
