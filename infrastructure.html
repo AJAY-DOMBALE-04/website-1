@@ -37,158 +37,96 @@
     <![endif]-->
 
     <style>
-  
-/* ===============================
-   INFRASTRUCTURE CARD STYLE
-   =============================== */
-
-.infra-card {
-    background: #f9f9f9;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 25px;
-    margin-bottom: 30px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-/* Hover effect */
-.infra-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
-
-/* Card headings */
-.infra-card h4 {
-    font-weight: 700;
-    margin-bottom: 15px;
-    position: relative;
-    padding-left: 15px;
-}
-
-/* Orange highlight bar */
-.infra-card h4::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 3px;
-    width: 5px;
-    height: 20px;
-    background-color: #e8850b;
-    border-radius: 2px;
-}
-
-/* List styling */
-.infra-card ul {
-    padding-left: 18px;
-}
-
-.infra-card ul li {
-    font-weight: 600;
-    color: #484545;
-    margin-bottom: 10px;
-}
-
-/* ===============================
-   INFRASTRUCTURE EQUAL HEIGHT CARDS
-   =============================== */
-
-/* Make columns flex */
-.infra-row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-/* Make columns stretch equally */
-.infra-row > [class*="col-"] {
-    display: flex;
-}
-
-/* Card full height */
-.infra-card {
-    background: #f9f9f9;
-    border: 1px solid #e0e0e0;
-
-    border-radius: 8px;
-    padding: 25px;
-    margin-bottom: 30px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-    position: relative;
-
-    /* KEY PART */
-    width: 100%;
-    min-height: 320px;   /* same size */
-    display: flex;
-    flex-direction: column;
-}
-
-/* Hover effect */
-.infra-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
-
-/* Card heading */
-.infra-card h4 {
-    font-weight: 700;
-    margin-bottom: 15px;
-    position: relative;
-    padding-left: 15px;
-}
-
-/* Orange highlight */
-.infra-card h4::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 3px;
-    width: 5px;
-    height: 20px;
-    background-color: #f7941d;
-    border-radius: 2px;
-}
-
-/* Card list */
-.infra-card ul {
-    padding-left: 18px;
-}
-
-.infra-card ul li {
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-/* Reduce space between cloud and infrastructure section */
+ /* ==============================
+   INFRASTRUCTURE SECTION FIX
+   ============================== */
 
 #infrastructure {
-    padding-top: 40px !important;
-    margin-top: -80px;
+    padding: 70px 0;
 }
 
-/* ===============================
-   INFRASTRUCTURE CARD CONTENT SIZE
-   =============================== */
+/* Fix row spacing (NO overlap) */
+#infrastructure .row {
+    margin-bottom: 30px;
+}
 
-/* Card heading */
+/* ==============================
+   INFRASTRUCTURE CARD STYLE
+   ============================== */
+
+.infra-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 32px 28px;
+    min-height: 300px;              /* SAME HEIGHT */
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+    position: relative;
+
+    /* Animation default state */
+    opacity: 0;
+    transform: translateY(60px);
+    transition: transform 0.6s ease, 
+                opacity 0.6s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Slide-up animation ON SCROLL */
+.infra-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover effect */
+.infra-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.16);
+}
+
+/* Accent line */
+.infra-card::before {
+    content: "";
+    width: 55px;
+    height: 4px;
+    background: #ff9800;
+    display: block;
+    margin-bottom: 18px;
+    border-radius: 3px;
+}
+
+/* Headings */
 .infra-card h4 {
-    font-size: 20px;       /* increase heading size */
+    font-size: 20px;
     font-weight: 700;
+    margin-bottom: 18px;
+    color: #0b3c5d;
 }
 
-/* Card list text */
+/* List reset */
+.infra-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+/* List items */
 .infra-card ul li {
-    font-size: 17px;       /* increase content size */
-    line-height: 1.8;     /* better readability */
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    color: #333;
 }
 
-/* Optional: paragraph text inside cards */
-.infra-card p {
-    font-size: 15px;
-    line-height: 1.8;
+/* ==============================
+   RESPONSIVE FIX
+   ============================== */
+
+@media (max-width: 991px) {
+    .infra-card {
+        min-height: auto;
+    }
 }
+
+
 
 
 
@@ -513,6 +451,23 @@
 <a href="#" id="scroll-to-top" class="dmtop global-radius">
     <i class="fa fa-angle-up"></i>
 </a>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".infra-card");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+});
+</script>
+
 
 
     <!-- ALL JS FILES -->
