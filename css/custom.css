@@ -44,8 +44,8 @@
 }
 #home {
     background:
-        linear-gradient(135deg, rgba(31,182,255,0.6), rgba(40,240,192,0.6)),
-        url('../uploads/your-image.jpg') center center/cover no-repeat;
+       
+        url('../uploads/factory1.jpg') center center/cover no-repeat;
     min-height: 500px;
     display: flex;
     align-items: center;
@@ -83,6 +83,43 @@ h1, h2, h3, h4, h5, h6 {
 #home .big-tagline {
     animation: fadeInUp 0.8s ease forwards;
     opacity: 0;
+}
+/* ===============================
+   PRODUCT CATEGORY GRID FIX
+================================ */
+
+/* Make all service cards same height */
+#services .service-widget {
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Fix image container height */
+#services .post-media {
+    height: 200px;              /* SAME height for all images */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+/* Make images fit nicely */
+#services .post-media img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;        /* IMPORTANT */
+}
+
+/* Title alignment */
+#services h3 {
+    min-height: 48px;           /* Keeps text aligned */
+    font-size: 18px;
+    margin: 0;
+    color: #083b44;
 }
 
 
@@ -384,9 +421,7 @@ body.seo_version #preloader{
         transform: scale(1);
     }
 }
-.container-text-center h1{
-    color:linear-gradient(135deg, #1FB6FF, #28F0C0);
-}
+
 /* reset old overlay behaviour */
 .da-thumbs .pitem a div{
     top: 0;
@@ -426,6 +461,44 @@ body.seo_version #preloader{
 .da-thumbs .pitem:hover a div p{
     opacity: 1;
 }
+/* ===============================
+   ABOUT PAGE – HIGHLIGHT TEXT
+================================ */
 
+.about-highlight {
+    font-size: 20px;
+    line-height: 1.9;
+    font-weight: 400;
+    color: #083b44;
+    max-width: 900px;
+    margin: 30px auto 0;
+    text-align: center;
+    position: relative;
+    padding: 20px 30px;
+}
 
+/* Gradient accent underline */
+.about-highlight::after {
+    content: "";
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(135deg,#1FB6FF,#28F0C0);
+    display: block;
+    margin: 18px auto 0;
+    border-radius: 3px;
+}
 
+/* Soft fade-in animation */
+.about-highlight {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: aboutTextFade 0.9s ease forwards;
+    animation-delay: 0.4s;
+}
+
+@keyframes aboutTextFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
