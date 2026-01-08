@@ -501,3 +501,73 @@ body.seo_version #preloader{
         transform: translateY(0);
     }
 }
+
+
+/* ===============================
+   TRANSPARENT NAVBAR STYLE
+   =============================== */
+
+/* Make navbar transparent */
+.header.header_style_01 {
+    background: transparent !important;
+    border: none;
+    box-shadow: none;
+}
+
+/* Remove default navbar background */
+.navbar-default {
+    background: transparent !important;
+    border: none;
+}
+
+/* Menu container spacing */
+.menu-top > li > a {
+    color: #ffffff !important;          /* White text */
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 50px;                /* Pill shape */
+    transition: all 0.3s ease;
+}
+
+/* Hover effect – white circle */
+.menu-top > li > a:hover {
+    background: #ffffff;
+    color: #000000 !important;
+}
+
+/* Active tab */
+.menu-top > li > a.active {
+    background: #ffffff;
+    color: #000000 !important;
+}
+
+/* Remove underline or default hover styles */
+.menu-top > li > a::after {
+    display: none !important;
+}
+
+/* Navbar brand fix (logo alignment) */
+.navbar-brand img {
+    max-height: 50px;
+}
+
+/* ===============================
+   MOBILE FIX
+   =============================== */
+
+@media (max-width: 768px) {
+    .navbar-default {
+        background: #ffffff !important;
+    }
+
+    .menu-top > li > a {
+        color: #000000 !important;
+        border-radius: 0;
+    }
+
+    .menu-top > li > a:hover,
+    .menu-top > li > a.active {
+        background: #f2f2f2;
+        color: #000000 !important;
+    }
+}
