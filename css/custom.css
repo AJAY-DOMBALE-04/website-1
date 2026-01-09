@@ -110,7 +110,7 @@
 
 /* Fix image container height */
 #services .post-media {
-    height: 200px;              /* SAME height for all images */
+    height: 300px;              /* SAME height for all images */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,7 +120,7 @@
 
 /* Make images fit nicely */
 #services .post-media img {
-    max-height: 100%;
+    max-height: 90%;
     max-width: 100%;
     object-fit: contain;        /* IMPORTANT */
 }
@@ -759,4 +759,9 @@ footer.footer ul {
         transform: none !important;
     }
 }
-
+/* Center last single service card safely */
+.last-service-row > div {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
