@@ -46,6 +46,7 @@
 
 .about-style {
     padding-left: 20px;
+    margin-top: -40px;
 }
 
 .about-tag {
@@ -96,7 +97,7 @@
 .post-media img {
     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
      width: 100%;
-    height: 400px;
+    height: 370px;
     object-fit: cover;
 }
 
@@ -107,6 +108,81 @@
     padding: 14px 22px;       /* Increase clickable area */
     font-weight: 600;
 }
+
+/* Reduce space below clouds SVG */
+#clouds {
+    display: block;
+    margin-bottom: -60px;   /* 👈 pulls About section closer */
+}
+
+/* Reduce top padding of About section */
+#about {
+    padding-top: 20px !important; 
+    margin-bottom: 10px;  /* default is too large */
+}
+
+/* Remove extra margin from first row */
+#about .row {
+    margin-top: 0 !important;
+}
+
+/* Optional: tighten image spacing */
+#about .post-media {
+    margin-bottom: 0;
+}
+.seo-services{
+    margin-top: -20px;
+    padding-top: 10px;
+
+}
+
+/* Section title heading */
+.seo-services .section-title h3 {
+    font-weight: 700;
+   
+    margin-bottom: 50px;
+
+    background: linear-gradient(135deg, #1FB6FF, #28F0C0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.seo-services {
+    margin-bottom: 80px;   /* space after cards */
+}
+.seo-services .who {
+    background: #ffffff;
+    padding: 30px 20px;
+    min-height: 260px;     /* equal card height */
+    border-radius: 14px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s ease;
+}
+
+.seo-services .who:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+.seo-services .who h4 {
+    font-size: 16px;       /* smaller & neat */
+    font-weight: 600;
+    line-height: 1.5;
+    color: #083b44;
+    margin-top: 18px;
+}
+
+.seo-services .who:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 32px rgba(31,182,255,0.25);
+}
+
 
 
 
@@ -268,14 +344,14 @@
 
     
 			
-			<hr class="hr1">
-			
-			<div class="section-title text-center  wow zoomIn" >
-                <h3>Core Components</h3>
-
-            </div><!-- end title -->
+			<hr>
 			
 			<div class="seo-services row clearfix">
+                
+			<div class="section-title text-center  wow zoomIn" >
+                <h3>Core Expertise</h3>
+
+            </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
 					<div class="who ">
 						<img src="images/seo-icons/growth.svg" alt="icon" class="wow fadeInUp">
@@ -311,46 +387,69 @@
     </div><!-- end section -->
 
     <div class="parallax section lb">
-        <div class="container">
-            <div class="section-title text-center wow zoomIn">
-                <h3>Key numbers</h3>
+    <div class="container">
+
+        <div class="section-title text-center wow zoomIn">
+            <h3>Key Numbers</h3>
+        </div>
+
+        <!-- ROW 1 : TWO COLUMNS -->
+        <div class="row text-center stat-wrap key-row-top">
+
+            <div class="col-md-6 col-sm-6 col-xs-12 wow bounceIn">
+                <span class="global-radius icon_wrap effect-1">
+                    <i class="flaticon-briefcase"></i>
+                </span>
+                <p>20+</p>
+                <h3>Years of Manufacturing Excellence</h3>
             </div>
-            <div class="row text-center stat-wrap justify-content-center">
-                <div class="col-md-4 col-sm-4 col-xs-12  wow bounceIn">
-                    <span data-scroll class="global-radius icon_wrap effect-1"><i class="flaticon-briefcase"></i></span>
-                    <p >20+</p>
-                    <h3>Years of Manufacturing Excellence</h3>
-                </div><!-- end col -->
 
-                <div class="col-md-4 col-sm-4 col-xs-12  wow bounceIn">
-                    <span data-scroll class="global-radius icon_wrap effect-1"><i class="flaticon-happy"></i></span>
-                    <p >3</p>
-                    <h3>Manufacturing Plants across India</h3>
-                </div><!-- end col -->
+            <div class="col-md-6 col-sm-6 col-xs-12 wow bounceIn">
+                <span class="global-radius icon_wrap effect-1">
+                    <i class="flaticon-happy"></i>
+                </span>
+                <p>3</p>
+                <h3>Manufacturing Plants across India</h3>
+            </div>
 
-                <div class="col-md-4 col-sm-4 col-xs-12  wow bounceIn">
-                    <span data-scroll class="global-radius icon_wrap effect-1"><i class="flaticon-idea"></i></span>
-                    <p >50+</p>
-                    <h3>Injection Molding Machines (100T-1600T)</h3>
-                </div><!-- end col -->
+        </div>
+
+        <!-- SPACE BETWEEN ROWS -->
+        <div class="row-gap"></div>
+
+        <!-- ROW 2 : THREE COLUMNS -->
+       <div class="row text-center stat-wrap justify-content-center bottom-stats">
 
 
-                
-                <div class="col-md-4 col-sm-4 col-xs-12  wow bounceIn">
-                    <span data-scroll class="global-radius icon_wrap effect-1"><i class="flaticon-customer-service"></i></span>
-                    <p >400+</p>
-                    <h3>Skilled Professionals</h3>
-                </div><!-- end col -->
+            <div class="col-md-4 col-sm-6 col-xs-12 wow bounceIn">
+                <span class="global-radius icon_wrap effect-1">
+                    <i class="flaticon-idea"></i>
+                </span>
+                <p>50+</p>
+                <h3>Injection Molding Machines (100T–1600T)</h3>
+            </div>
 
-                
-                <div class="col-md-4 col-sm-4 col-xs-12  wow bounceIn">
-                    <span data-scroll class="global-radius icon_wrap effect-1"><i class="flaticon-customer-service"></i></span>
-                    <p class="stat_count">100000+</p>
-                    <h3>Sq. Ft. Manufacturing Space</h3>
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
+            <div class="col-md-4 col-sm-6 col-xs-12 wow bounceIn">
+                <span class="global-radius icon_wrap effect-1">
+                    <i class="flaticon-customer-service"></i>
+                </span>
+                <p>400+</p>
+                <h3>Skilled Professionals</h3>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12 wow bounceIn">
+                <span class="global-radius icon_wrap effect-1">
+                    <i class="flaticon-customer-service"></i>
+                </span>
+                <p>100000+</p>
+                <h3>Sq. Ft. Manufacturing Space</h3>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
 
 
 
