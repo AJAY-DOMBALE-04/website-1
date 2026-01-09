@@ -67,9 +67,9 @@
 }
 
 .about-desc {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.8;
-    color: #555;
+    color: #0c0c0c;
     margin-bottom: 25px;
 }
 
@@ -97,7 +97,7 @@
 .post-media img {
     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
      width: 100%;
-    height: 370px;
+    height: 400px;
     object-fit: cover;
 }
 
@@ -109,7 +109,14 @@
 .footer {
     padding-top: 0px;
     padding-bottom: 0px; /* reduce bottom space */
+
+
+
+    padding-top: 10px;
+    padding-bottom: 20px; /* reduce bottom space */
+    margin-top:0;
 }
+
 
 
 /* Remove extra margin from widgets */
@@ -150,17 +157,23 @@
 
 
 .container-fuild {
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-top: 40px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 0px;
 }
+
 
 /* Reduce space below clouds SVG */
 #clouds {
     display: block;
-    margin-bottom: -60px;   /* 👈 pulls About section closer */
+    margin-bottom: -60px;  
+     /* 👈 pulls About section closer */
 }
-
+#clouds1 {
+    display: block;
+    margin-bottom: -60px;  
+     /* 👈 pulls footer closer */
+}
 /* Reduce top padding of About section */
 #about {
     padding-top: 20px !important; 
@@ -277,6 +290,33 @@
 .service-widget:hover h3 {
     color: #00bcd4; /* blue-green highlight */
 }
+
+
+/* ===============================
+   CUSTOMER LOGO CAROUSEL
+   =============================== */
+
+.customer-carousel .logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.customer-carousel img {
+    max-height: 80px;
+    width: auto;
+    filter: grayscale(100%);
+    opacity: 0.85;
+    transition: all 0.3s ease;
+}
+
+.customer-carousel img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
 
 
 
@@ -396,7 +436,7 @@
             <div class="col-md-6 m40">
                 <div class="message-box wow fadeInRight about-style">
 
-                    <span class="about-tag">ABOUT COMPANY</span>
+                    <span class="about-tag"> Learn more about our company, vision, values, and management philosophy.</span>
 
                     <h2>We Are Sanjay Techno Plast</h2>
 
@@ -495,8 +535,8 @@
                 <span class="global-radius icon_wrap effect-1">
                     <i class="flaticon-briefcase"></i>
                 </span>
-                <p>20+</p>
-                <h3>Years of Manufacturing Excellence</h3>
+                <p>20+ Years</p>
+                <h3> Manufacturing Excellence</h3>
             </div>
 
             <div class="col-md-6 col-sm-6 col-xs-12 wow bounceIn">
@@ -536,8 +576,8 @@
                 <span class="global-radius icon_wrap effect-1">
                     <i class="flaticon-customer-service"></i>
                 </span>
-                <p>100000+</p>
-                <h3>Sq. Ft. Manufacturing Space</h3>
+                <p>100000+ Sq. Ft.</p>
+                <h3>Manufacturing Space</h3>
             </div>
 
         </div>
@@ -646,18 +686,19 @@
                 <h3>Key Customers</h3>
                 <p class="lead">Our success is built on strong, long-term partnerships with OEMs and Tier-1 automotive suppliers, delivering consistent quality, reliability, and on-time performance.</p>
             </div><!-- end title -->
-
+         
             <div class="row">
-                <div id="logo-carousel" class="owl-carousel">
-					<div> <img src="uploads/logo_01.png" alt=""> </div>
-					<div> <img src="uploads/logo_02.png" alt=""> </div>
-					<div> <img src="uploads/logo_03.png" alt=""> </div>
-					<div> <img src="uploads/logo_04.png" alt=""> </div>
-					<div> <img src="uploads/logo_05.png" alt=""> </div>
-					<div> <img src="uploads/logo_06.png" alt=""> </div>
-					<div> <img src="uploads/logo_07.png" alt=""> </div>
-					<div> <img src="uploads/logo_08.png" alt=""> </div>
-				</div>
+               <div id="logo-carousel" class="owl-carousel customer-carousel">
+    <div class="logo-item"><img src="uploads/logo_01.png" alt=""></div>
+    <div class="logo-item"><img src="uploads/logo_02.png" alt=""></div>
+    <div class="logo-item"><img src="uploads/logo_03.png" alt=""></div>
+    <div class="logo-item"><img src="uploads/logo_04.png" alt=""></div>
+    <div class="logo-item"><img src="uploads/logo_05.png" alt=""></div>
+    <div class="logo-item"><img src="uploads/logo_06.png" alt=""></div>
+    <div class="logo-item"><img src="uploads/logo_07.png" alt=""></div>
+    <div class="logo-item"><img src="uploads/logo_08.png" alt=""></div>
+</div>
+
             </div><!-- end row -->
         </div><!-- end container -->
     </div><!-- end section -->
@@ -794,6 +835,37 @@ window.addEventListener("scroll", function () {
         header.classList.remove("scrolled");
     }
 });
+
+
+$(document).ready(function () {
+    $("#logo-carousel").owlCarousel({
+        loop: true,
+        margin: 40,
+        autoplay: true,
+        autoplayTimeout: 0,          // key for continuous motion
+        autoplaySpeed: 6000,         // controls speed (higher = slower)
+        autoplayHoverPause: true,
+        slideTransition: 'linear',   // smooth continuous movement
+        smartSpeed: 6000,
+        dots: false,
+        nav: false,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 4
+            },
+            1000: {
+                items: 6
+            }
+        }
+    });
+});
+
+
+
+
 </script>
 
     <!-- ALL JS FILES -->
