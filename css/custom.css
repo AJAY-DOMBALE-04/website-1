@@ -532,7 +532,7 @@ body.seo_version #preloader{
     height: 800px;
     background-size: cover;
     background-position: center;
-    padding-top: 120px;   /* 👈 pushes image down */
+    padding-top: 140px;   /* 👈 pushes image down */
     box-sizing: border-box;
     
 }
