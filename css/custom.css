@@ -545,29 +545,109 @@ body.seo_version #preloader{
 .navbar-nav {
     display: flex;
     align-items: center;
-}
+} 
 
-/* Menu items spacing */
-.navbar-nav > li > a {
-    color: #ffffff;
-    font-weight: 500;
-    padding: 10px 14px;
-    border-radius: 30px;
+
+
+
+/* ===== NAVBAR TAB SIZE INCREASE ===== */
+
+.menu-top > li > a {
+    font-size: 16.5px;        /* Bigger text */
+    padding: 14px 26px;       /* Bigger clickable area */
+    font-weight: 600;
+    line-height: 1.4;
     transition: all 0.3s ease;
 }
 
+/* Hover effect */
+.menu-top > li > a:hover {
+    transform: translateY(-1px);
+}
+
 /* Active tab */
-.navbar-nav > li > a.active {
-    background: rgba(255,255,255,0.25);
-    color: #ffffff;
+.menu-top > li > a.active {
+    font-weight: 700;
 }
 
-/* Hover white circle */
-.navbar-nav > li > a:hover {
-    background: rgba(255,255,255,0.35);
-    color: #ffffff;
+
+
+
+/* ===============================
+   FORCE FOOTER SPACE REMOVAL
+   =============================== */
+
+footer.footer {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
 }
 
-.nav  li{
-    font-size: 90px;
+footer.footer .container {
+    padding-bottom: 0 !important;
 }
+
+footer.footer .row {
+    margin-bottom: 0 !important;
+}
+
+footer.footer .widget {
+    margin-bottom: 0 !important;
+}
+
+footer.footer p {
+    margin-bottom: 8px !important;
+}
+
+footer.footer ul {
+    margin-bottom: 0 !important;
+}
+
+/* COPYRIGHT FIX */
+.copyrights {
+    margin-top: 0 !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
+
+.footer-company-name {
+    margin: 0 !important;
+}
+
+
+
+
+/* ===============================
+   MOBILE NAVBAR FIX
+   =============================== */
+
+@media (max-width: 768px) {
+
+    /* Logo resize */
+    .navbar-brand img {
+        max-height: 47px !important;
+        width: auto !important;
+    }
+
+    .navbar-brand {
+        padding-left: 10px;
+    }
+
+    /* Navbar height reduce */
+    .navbar {
+        min-height: 60px;
+    }
+
+    /* Hamburger position */
+    .navbar-toggle {
+        margin-top: 12px;
+        margin-right: 12px;
+        background: #a7c636;
+        border-radius: 6px;
+    }
+
+    .navbar-toggle .icon-bar {
+        background-color: #fff;
+    }
+}
+
+

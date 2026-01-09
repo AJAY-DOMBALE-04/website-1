@@ -100,14 +100,58 @@
     object-fit: cover;
 }
 
+/* ===============================
+   FOOTER BOTTOM SPACE FIX
+   =============================== */
 
-/* Increase navbar tab size */
-.menu-top > li > a {
-    font-size: 16px;          /* Increase text size */
-    padding: 14px 22px;       /* Increase clickable area */
-    font-weight: 600;
+/* Reduce footer padding */
+.footer {
+    padding-top: 40px;
+    padding-bottom: 20px; /* reduce bottom space */
 }
 
+/* Remove extra margin from widgets */
+.footer .widget {
+    margin-bottom: 0;
+}
+
+/* Reduce paragraph spacing */
+.footer p {
+    margin-bottom: 10px;
+}
+
+/* Remove list spacing */
+.footer-links {
+    margin-bottom: 0;
+}
+
+/* Fix row margin */
+.footer .row {
+    margin-bottom: 0;
+}
+
+/* ===============================
+   COPYRIGHT SECTION FIX
+   =============================== */
+
+.copyrights {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-top: 0;
+}
+
+/* Remove default p margin */
+.footer-company-name {
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+.container-fuild {
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+}
 
 
 </style>
@@ -210,7 +254,7 @@
      
     
       <div id="about" class="section wb nopadtop">
-    <div class="container">
+    <div class="container-fuild">
         <div class="row align-items-center">
 
             <!-- LEFT IMAGE -->
@@ -494,7 +538,7 @@
     </svg>
 
 	<footer class="footer">
-    <div class="container">
+    <div class="container-fuild">
         <div class="row">
 
             <!-- ABOUT COMPANY -->
