@@ -762,8 +762,13 @@ footer.footer ul {
 
 .lead {
     text-align: justify;
+    margin-left: 20px;
     
 }
+.lead1{
+    text-align: center;
+}
+
 /* Center last single service card safely */
 .last-service-row > div {
     float: none;
