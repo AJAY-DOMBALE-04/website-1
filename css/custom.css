@@ -46,7 +46,7 @@
     background:
        
         url('../uploads/factory1.jpg') center center/cover no-repeat;
-    min-height: 500px;
+    min-height: 800px;
     display: flex;
     align-items: center;
 }
@@ -67,21 +67,34 @@
     color: #083b44;
 }
 #home .big-tagline {
-    background: rgba(255,255,255,0.9);   /* white glass-style box */
-    padding: 25px 30px;
+    background: rgba(255,255,255,0.9);
+    padding: 12px 36px;          /* ⬇ less height, ⬅➡ more width */
     border-radius: 12px;
-    margin-left: 40px;
-    display: inline-block;
-    max-width: 700px;
+    
+    display:inline-block;
+
+    max-width: 1000px;            /* ⬅ wider box */
+    width: auto;                 /* adapts to content */
 }
-#home .big-tagline h2,
-#home .big-tagline p {
+
+/* Text styling */
+#home .big-tagline h2
+ {
     color: #000000;
+   margin-top: 8px;
+    font-size: 50px;         /* tighter vertical spacing */
 }
+#home .big-tagline p{
+    color: #000000;
+   
+}
+
+/* Animation */
 #home .big-tagline {
     animation: fadeInUp 0.8s ease forwards;
     opacity: 0;
 }
+
 /* ===============================
    PRODUCT CATEGORY GRID FIX
 ================================ */
@@ -116,13 +129,22 @@
 .section-title h3 {
     min-height: 48px;
     margin: 0;
+    font-style: bold;
     background: linear-gradient(135deg, #1FB6FF, #28F0C0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 
-
+.seo-services .section-title h3{
+     min-height: 48px;
+    margin: 0;
+    font-style: bold;
+    background: linear-gradient(135deg, #1FB6FF, #28F0C0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+    
 
 
 
@@ -507,7 +529,7 @@ body.seo_version #preloader{
    ===================================== */
 
 .all-page-title {
-    min-height: 100vh;
+    height: 800px;
     background-size: cover;
     background-position: center;
     padding-top: 120px;   /* 👈 pushes image down */
@@ -586,6 +608,7 @@ footer.footer .container {
     padding-bottom: 0 !important;
 }
 
+
 footer.footer .row {
     margin-bottom: 0 !important;
 }
@@ -650,4 +673,90 @@ footer.footer ul {
     }
 }
 
+
+
+/* Key Numbers spacing control */
+.key-row-top,
+.key-row-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Space between top and bottom rows */
+.row-gap {
+    height: 40px;
+}
+
+/* Equal vertical spacing inside each stat */
+.stat-wrap > div {
+    margin-bottom: 30px;
+}
+
+/* Tighter text spacing */
+.stat-wrap h3 {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+
+.stat-wrap p {
+    font-size: 36px;
+    font-weight: 600;
+    margin: 12px 0 0;
+}
+/* Bottom row spread properly */
+.spread-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Prevent cards from sticking together */
+.spread-row > div {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Keep equal visual balance */
+.key-row-top {
+    display: flex;
+    justify-content: center;
+}
+@media (min-width: 992px) {
+    .spread-row > div:nth-child(1) {
+        margin-left: 0;
+    }
+    .spread-row > div:nth-child(3) {
+        margin-right: 0;
+    }
+}
+/* Make Key Numbers section wider */
+.parallax.section.lb .container {
+    max-width: 1550px;   /* default is ~1170px */
+}
+
+/* Add vertical spacing between rows */
+.stat-wrap > div {
+    margin-bottom: 40px;
+}
+/* ONLY move left & right cards visually */
+.bottom-stats .col-md-4:first-child {
+    transform: translateX(-100px);
+}
+
+.bottom-stats .col-md-4:last-child {
+    transform: translateX(100px);
+}
+
+/* keep center card unchanged */
+.bottom-stats .col-md-4:nth-child(2) {
+    transform: none;
+}
+
+/* mobile safety */
+@media (max-width: 991px) {
+    .bottom-stats .col-md-4 {
+        transform: none !important;
+    }
+}
 
