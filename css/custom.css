@@ -258,10 +258,10 @@ body.seo_version #preloader{
 }
 .timeline > li:last-child {
   margin-bottom: 0;
-  padding-bottom: 40px;
+  padding-bottom: 50px;
 }
 .timeline {
-  padding-bottom: 40px; /* was 120px earlier */
+  padding-bottom: 100px; 
 }
 
 
@@ -299,10 +299,22 @@ body.seo_version #preloader{
 
 .award-list li {
   margin-bottom: 8px;
-  font-size: 15px;
+  font-size: 24px;
   color: #444;
   line-height: 1.6;
 }
+/* FORCE BULLETS FOR AWARD LIST */
+.award-list {
+  list-style-type: disc;
+  padding-left: 22px;
+  margin-top: 10px;
+}
+
+.award-list li {
+  list-style-type: disc;
+  display: list-item;
+}
+
 
 /* Animation */
 .timeline > li {
