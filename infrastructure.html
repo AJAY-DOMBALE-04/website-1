@@ -36,97 +36,203 @@
     <![endif]-->
 
     <style>
- /* ==============================
-   INFRASTRUCTURE SECTION FIX
-   ============================== */
+ 
 
-#infrastructure {
-    padding: 70px 0;
+ /* ===============================
+   INFRASTRUCTURE – NEW DESIGN
+   =============================== */
+
+.infra-title h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #0a2540;
 }
 
-/* Fix row spacing (NO overlap) */
-#infrastructure .row {
-    margin-bottom: 30px;
+.infra-title .lead {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 60px;
 }
 
-/* ==============================
-   INFRASTRUCTURE CARD STYLE
-   ============================== */
+/* PLANT CARDS */
+.infra-cards {
+    margin-bottom: 90px;
+}
 
-.infra-card {
+.plant-card {
     background: #ffffff;
-    border-radius: 14px;
-    padding: 32px 28px;
-    min-height: 300px;              /* SAME HEIGHT */
-    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-    position: relative;
-
-    /* Animation default state */
-    opacity: 0;
-    transform: translateY(60px);
-    transition: transform 0.6s ease, 
-                opacity 0.6s ease,
-                box-shadow 0.3s ease;
+    border-radius: 16px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    transition: all 0.4s ease;
+    cursor: pointer;
 }
 
-/* Slide-up animation ON SCROLL */
-.infra-card.show {
-    opacity: 1;
-    transform: translateY(0);
+.plant-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
 }
 
-/* Hover effect */
-.infra-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.16);
-}
-
-/* Accent line */
-.infra-card::before {
-    content: "";
-    width: 55px;
-    height: 4px;
-    background: #ff9800;
-    display: block;
-    margin-bottom: 18px;
-    border-radius: 3px;
-}
-
-/* Headings */
-.infra-card h4 {
-    font-size: 20px;
+.plant-card h4 {
+    font-size: 18px;
     font-weight: 700;
-    margin-bottom: 18px;
-    color: #0b3c5d;
+    color: #1a1a1a;
 }
 
-/* List reset */
-.infra-card ul {
+.plant-card:hover {
+    transform: translateY(-12px) scale(1.04);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.25);
+}
+
+/* ===============================
+   PLANT DETAIL – POINTWISE TYPING
+   =============================== */
+
+.plant-detail {
+    max-width: 900px;
+    margin: 0 auto 90px auto;
+    padding: 45px;
+    background: #f9fafb;
+    border-radius: 22px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.plant-detail h3 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0aa5a5;
+    margin-bottom: 25px;
+}
+
+/* UL */
+.type-list {
     list-style: none;
     padding-left: 0;
-    margin: 0;
 }
 
-/* List items */
-.infra-card ul li {
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 10px;
-    color: #333;
+/* LI */
+.type-list li {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1f1f1f;
+    margin-bottom: 14px;
+    padding-left: 28px;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-/* ==============================
-   RESPONSIVE FIX
-   ============================== */
+/* CHECK ICON */
+.type-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #0aa5a5;
+    font-weight: bold;
+}
 
-@media (max-width: 991px) {
-    .infra-card {
-        min-height: auto;
+/* Cursor effect */
+.type-list li.typing {
+    border-right: 2px solid #0aa5a5;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+    .type-list li {
+        white-space: normal;
+        border-right: none;
     }
 }
 
+.section-title.infra-title {
+    margin-top: 60px;
+}
 
 
+.row infra-cards{
+    text-align: center;
+}
+
+
+/* ===============================
+   FOOTER TEXT VISIBILITY FIX
+   =============================== */
+
+/* Footer headings */
+footer.footer h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;              /* dark heading */
+    margin-bottom: 14px;
+}
+
+/* Footer paragraph */
+footer.footer p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #222;              /* darker readable text */
+    margin-bottom: 0;
+}
+
+/* Footer list items */
+footer.footer .footer-links li {
+    font-size: 16px;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+/* Footer links */
+footer.footer .footer-links a {
+    font-size: 16px;
+    color: #222;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+footer.footer .footer-links a:hover {
+    color: #007c8a;           /* blue-green highlight */
+    text-decoration: none;
+}
+
+/* Social icons */
+footer.footer .social-md i {
+    font-size: 16px;
+    color: #007c8a;
+}
+
+/* Widget spacing */
+footer.footer .widget {
+    padding: 0 20px;
+}
+
+/* ===============================
+   COPYRIGHT TEXT
+   =============================== */
+
+.footer-company-name {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+}
+
+
+
+.container-fuild {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: -90px;
+}
+
+.container-fuild1 {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: -90px;
+    
+}
 
 
 </style>
@@ -183,135 +289,94 @@
     </nav>
 </header>
 
-    <div class="all-page-title" style="background-image:url(images/pattern-4.png);">
-        <div class="container text-center">
-            <h1>Infrastructure</h1>
+   <div id="infrastructure" class="section wb">
+    <div class="container-fluid">
+
+        <!-- MAIN HEADING -->
+        <div class="section-title text-center infra-title">
+            <h2>Manufacturing Units</h2>
+            <p class="lead1">
+                Strategically located plants supporting high-volume and precision manufacturing.
+            </p>
         </div>
-		<!--Page -->
-        <div class="page-info">
-            <div class="container">
-            	<div class="inner-container">
-                    <ul class="bread-crumb">
-                        <li><a href="index.html">Home</a></li>
-                        <li><span>Infrastructure<span></li>
-                    </ul>
+
+        <!-- PLANT CARDS -->
+        <div class="row infra-cards">
+
+            <div class="col-md-3 col-sm-6">
+                <div class="plant-card">
+                    <img src="uploads/DSC_8591.jpg" alt="Pune Plant">
+                    <h4>Pune (Ranjangaon)</h4>
                 </div>
             </div>
-        </div>
-        <!--End Page-->
-    </div><!-- end section -->
 
-    <svg id="clouds" class="hidden-xs" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 85 100" preserveAspectRatio="none">
-        <path d="M-5 100 Q 0 20 5 100 Z
-            M0 100 Q 5 0 10 100
-            M5 100 Q 10 30 15 100
-            M10 100 Q 15 10 20 100
-            M15 100 Q 20 30 25 100
-            M20 100 Q 25 -10 30 100
-            M25 100 Q 30 10 35 100
-            M30 100 Q 35 30 40 100
-            M35 100 Q 40 10 45 100
-            M40 100 Q 45 50 50 100
-            M45 100 Q 50 20 55 100
-            M50 100 Q 55 40 60 100
-            M55 100 Q 60 60 65 100
-            M60 100 Q 65 50 70 100
-            M65 100 Q 70 20 75 100
-            M70 100 Q 75 45 80 100
-            M75 100 Q 80 30 85 100
-            M80 100 Q 85 20 90 100
-            M85 100 Q 90 50 95 100
-            M90 100 Q 95 25 100 100
-            M95 100 Q 100 15 105 100 Z">
-        </path>
-    </svg>
+            <div class="col-md-3 col-sm-6">
+                <div class="plant-card">
+                    <img src="uploads/DSC_8594.jpg" alt="Greater Noida Plant">
+                    <h4>Greater Noida</h4>
+                </div>
+            </div>
 
-  <div id="infrastructure" class="section wb">
-    <div class="container">
+            <div class="col-md-3 col-sm-6">
+                <div class="plant-card">
+                    <img src="uploads/DSC_8597.jpg" alt="Pantnagar Plant">
+                    <h4>Pantnagar (Rudrapur)</h4>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="plant-card">
+                    <img src="uploads/DSC_8597.jpg" alt="Pantnagar Plant">
+                    <h4>Tool Room</h4>
+                </div>
+            </div>
 
-        <!-- SECTION TITLE -->
-        <div class="section-title text-center">
             
-            <h4><b>
-                Our strategically located manufacturing facilities ensure efficient logistics,
-                advanced production capabilities, and nationwide supply support.</b>
-            </h4>
-        </div>
-
-        <div class="row">
-         <div class="row infra-row">
-
-            <!-- Manufacturing Footprint -->
-            <div class="col-md-4">
-                <div class="infra-card">
-                    <h4>Manufacturing Footprint</h4>
-                    <ul>
-                        <li>• Pune (Ranjangaon)</li>
-                        <li>• Greater Noida</li>
-                        <li>• Pantnagar (Rudrapur)</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Pune Facility -->
-            <div class="col-md-4">
-                <div class="infra-card">
-                    <h4>Pune Facility</h4>
-                    <ul>
-                        <li>• 30 Injection molding machines (100–1600T)</li>
-                        <li>• Fan balancing machines</li>
-                        <li>• Hot plate & ultrasonic welding</li>
-                        <li>• Advanced lab & inspection equipment</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Greater Noida Facility -->
-            <div class="col-md-4">
-                <div class="infra-card">
-                    <h4>Greater Noida Facility</h4>
-                    <ul>
-                        <li>• 6 Injection molding machines (180–1000T)</li>
-                        <li>• Fan balancing machines</li>
-                        <li>• Multiple SPMs</li>
-                        <li>• Advanced inspection & testing facilities</li>
-                    </ul>
-                </div>
-            </div>
 
         </div>
 
-        <div class="row">
-
-            <!-- Machines & Capacities -->
-            <div class="col-md-6">
-                <div class="infra-card">
-                    <h4>Machines & Capacities</h4>
-                    <ul>
-                        <li>• 50+ Injection molding machines</li>
-                        <li>• High tonnage capability up to 1600T</li>
-                        <li>• Multiple SPMs for post-molding operations</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Tool Room Capabilities -->
-            <div class="col-md-6">
-                <div class="infra-card">
-                    <h4>Tool Room Capabilities</h4>
-                    <ul>
-                        <li>• VMC – 1300 × 700 × 700 (2 Nos)</li>
-                        <li>• EDM – 500 × 450 × 300 (2 Nos)</li>
-                        <li>• Lathe, Milling, Grinding & Drilling</li>
-                        <li>• Injection molding tools up to 850T</li>
-                    </ul>
-                </div>
-            </div>
+      <!-- PUNE DETAILS -->
+<div class="plant-detail">
+    <h3>Pune Facility</h3>
+    <ul class="type-list">
+        <li data-text="30 Injection molding machines (100T – 1600T)"></li>
+        <li data-text="Advanced fan balancing machines"></li>
+        <li data-text="Hot plate & ultrasonic welding systems"></li>
+        <li data-text="Fully equipped quality inspection laboratory"></li>
+    </ul>
 </div>
-        </div>
 
-    </div>
+<!-- GREATER NOIDA DETAILS -->
+<div class="plant-detail">
+    <h3>Greater Noida Facility</h3>
+    <ul class="type-list">
+        <li data-text="6 Injection molding machines (180T – 1000T)"></li>
+        <li data-text="Multiple Special Purpose Machines (SPMs)"></li>
+        <li data-text="Fan balancing & automated assembly lines"></li>
+        <li data-text="Advanced testing and inspection facilities"></li>
+    </ul>
 </div>
+
+<!-- MACHINES & CAPACITIES -->
+<div class="plant-detail">
+    <h3>Machines & Capacities</h3>
+    <ul class="type-list">
+        <li data-text="50+ Injection molding machines"></li>
+        <li data-text="High tonnage capability up to <strong>1600T</strong>"></li>
+        <li data-text="Multiple SPMs for post-molding operations"></li>
+    </ul>
+</div>
+
+<!-- TOOL ROOM CAPABILITIES -->
+<div class="plant-detail">
+    <h3>Tool Room Capabilities</h3>
+    <ul class="type-list">
+        <li data-text="VMC – 1300 × 700 × 700 (2 Nos)"></li>
+        <li data-text="EDM – 500 × 450 × 300 (2 Nos)"></li>
+        <li data-text="Conventional machines – Lathe, Milling, Grinding, Drilling"></li>
+        <li data-text="Injection molding tools up to <strong>850T</strong>"></li>
+    </ul>
+</div>
+
 
 
     
@@ -353,21 +418,20 @@
         </path>
     </svg>
 
-	<footer class="footer">
-    <div class="container">
+  <footer class="footer">
+    <div class="container-fuild1">
         <div class="row">
 
             <!-- ABOUT COMPANY -->
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
-                     
                         <h3>Sanjay Techno Plast Pvt. Ltd.</h3>
                     </div>
                     <p>
-                        <b>Sanjay Techno Plast Pvt. Ltd. is a professionally managed manufacturing company
+                        Sanjay Techno Plast Pvt. Ltd. is a professionally managed manufacturing company
                         specializing in automotive and industrial plastic components, delivering
-                        consistent quality, reliability, and on-time performance. </b>
+                        consistent quality, reliability, and on-time performance.
                     </p>
                 </div>
             </div><!-- end col -->
@@ -376,7 +440,7 @@
             <div class="col-md-3 col-sm-3 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
-                        <h3>Contact Details</h3>
+                        <h3 class="contact">Contact Details</h3>
                     </div>
 
                     <ul class="footer-links">
@@ -395,8 +459,7 @@
                     </ul><!-- end links -->
                 </div>
             </div><!-- end col -->
-
-            <!-- INFORMATION -->
+             <!-- INFORMATION -->
             <div class="col-md-3 col-sm-3 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
@@ -412,7 +475,6 @@
                     </ul><!-- end links -->
                 </div>
             </div><!-- end col -->
-
             <!-- SOCIAL -->
             <div class="col-md-2 col-sm-2 col-xs-12">
                 <div class="widget clearfix">
@@ -427,7 +489,9 @@
                     </ul><!-- end links -->
                 </div>
             </div><!-- end col -->
+            
 
+            
         </div><!-- end row -->
     </div><!-- end container -->
 </footer><!-- end footer -->
@@ -442,9 +506,6 @@
                 </p>
             </div>
 
-            <div class="footer-right">
-                
-            </div>
         </div>
     </div>
 </div>
@@ -452,7 +513,7 @@
 <a href="#" id="scroll-to-top" class="dmtop global-radius">
     <i class="fa fa-angle-up"></i>
 </a>
-
+	
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const cards = document.querySelectorAll(".infra-card");
@@ -467,6 +528,72 @@ document.addEventListener("DOMContentLoaded", function () {
 
     cards.forEach(card => observer.observe(card));
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedItems = document.querySelectorAll(".slide-left, .slide-right");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.25 });
+
+    animatedItems.forEach(item => observer.observe(item));
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const lists = document.querySelectorAll(".type-list");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                typeLines(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    lists.forEach(list => observer.observe(list));
+
+    function typeLines(list) {
+        const items = list.querySelectorAll("li");
+        let index = 0;
+
+        function typeNext() {
+            if (index >= items.length) return;
+
+            const li = items[index];
+            const text = li.getAttribute("data-text");
+            li.textContent = "";
+            li.classList.add("typing");
+
+            let char = 0;
+            const typing = setInterval(() => {
+                li.textContent += text.charAt(char);
+                char++;
+
+                if (char >= text.length) {
+                    clearInterval(typing);
+                    li.classList.remove("typing");
+                    index++;
+                    setTimeout(typeNext, 300);
+                }
+            }, 30);
+        }
+
+        typeNext();
+    }
+
+});
+
+
+
 </script>
 
 
