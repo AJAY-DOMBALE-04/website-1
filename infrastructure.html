@@ -37,53 +37,44 @@
     <style>
  
 
- /* ===============================
-   INFRASTRUCTURE – NEW DESIGN
-   =============================== */
-
-.infra-title h2 {
-    font-size: 42px;
-    font-weight: 800;
-    color: #0a2540;
-}
-
-.infra-title .lead {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 60px;
-}
-
-/* PLANT CARDS */
+/* Card container */
 .infra-cards {
-    margin-bottom: 90px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    align-items: stretch;
 }
 
-.plant-card {
-    background: #ffffff;
+/* Card */
+.infra-card {
+    background: #fff;
     border-radius: 16px;
-    padding: 15px;
+    padding: 20px;
     text-align: center;
-    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-    transition: all 0.4s ease;
-    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;   /* 🔑 all cards equal height */
 }
 
-.plant-card img {
+/* Image area – SAME SIZE FOR ALL */
+.infra-card img {
     width: 100%;
+    height: 220px;          /* 🔑 fixed image height */
+    object-fit: cover;      /* 🔑 prevents stretch */
     border-radius: 12px;
     margin-bottom: 15px;
 }
 
-.plant-card h4 {
+/* Title */
+.infra-card h4 {
     font-size: 18px;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #111;
+    margin-top: auto;
 }
 
-.plant-card:hover {
-    transform: translateY(-12px) scale(1.04);
-    box-shadow: 0 25px 45px rgba(0,0,0,0.25);
-}
 
 /* ===============================
    PLANT DETAIL – POINTWISE TYPING
@@ -96,6 +87,7 @@
     background: #f9fafb;
     border-radius: 22px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    
 }
 
 .plant-detail h3 {
@@ -236,6 +228,104 @@ footer.footer .widget {
     
 }
 
+/* TOOL ROOM SECTION */
+.toolroom-section {
+    color: #eee;
+    padding: 80px 40px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* TITLE */
+.toolroom-title {
+    text-align: center;
+    font-size: 42px;
+    color: #0d0909;
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+}
+
+/* GRID LAYOUT */
+.toolroom-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* TEXT CONTENT */
+.toolroom-text h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #0e0909;
+}
+
+.toolroom-text p {
+    font-size: 20px;
+    line-height: 1.7;
+    color: #110c0c;
+}
+
+/* LIST */
+.toolroom-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.toolroom-list li {
+    font-size: 20px;
+    padding: 8px 0;
+    color: #0d0707;
+    position: relative;
+    padding-left: 25px;
+}
+
+.toolroom-list li::before {
+    content: "◆";
+    position: absolute;
+    left: 0;
+    color: #ff9800;
+}
+
+/* IMAGES */
+.toolroom-img {
+    text-align: center;
+}
+
+.toolroom-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* HOVER ZOOM */
+.toolroom-img img:hover {
+    transform: scale(1.07);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* SPACING */
+.mt {
+    margin-top: 30px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .toolroom-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .toolroom-text {
+        order: 1;
+    }
+}
+
+.mt p {
+    text-align: justify;
+}
+
 
 </style>
  <link rel="stylesheet" href="css/custom.css">
@@ -304,60 +394,101 @@ footer.footer .widget {
         </div>
 
         <!-- PLANT CARDS -->
-        <div class="row infra-cards">
+      <div class="infra-cards">
 
-            <div class="col-md-3 col-sm-6">
-                <div class="plant-card">
-                    <img src="uploads/DSC_8591.jpg" alt="Pune Plant">
-                    <h4>Pune (Ranjangaon)</h4>
-                </div>
+    <a href="#pune" class="infra-link">
+        <div class="infra-card">
+            <img src="uploads/DSC_8591.jpg" alt="Pune Plant">
+            <h4>Pune (Ranjangaon)</h4>
+        </div>
+    </a>
+
+    <a href="#noida" class="infra-link">
+        <div class="infra-card">
+            <img src="uploads/DSC_8594.jpg" alt="Greater Noida">
+            <h4>Greater Noida</h4>
+        </div>
+    </a>
+
+    <a href="#noida" class="infra-link">
+        <div class="infra-card">
+            <img src="uploads/DSC_8598.jpg" alt="Pantnagar">
+            <h4>Pantnagar (Rudrapur)</h4>
+        </div>
+    </a>
+
+    <a href="#toolroom" class="infra-link">
+        <div class="infra-card">
+            <img src="uploads/toolroom.png" alt="Tool Room">
+            <h4>Tool Room</h4>
+        </div>
+    </a>
+
+</div>
+
+
+<!-- TOOL ROOM CAPABILITIES SECTION -->
+<section class="toolroom-section">
+    <div class="container-fluid">
+
+        <h2 class="toolroom-title">Advanced Tool Room Capabilities</h2>
+
+        <div id="toolroom" class="toolroom-grid">
+
+            <!-- LEFT CONTENT -->
+            <div class="toolroom-text">
+                <h3>Tool Room Equipment</h3>
+                <ul class="toolroom-list">
+                    <li>VMC – 1300 × 700 × 700 (2 Nos)</li>
+                    <li>EDM – 500 × 450 × 300 (2 Nos)</li>
+                    <li>Conventional machines – Lathe, Milling, Grinding, Drilling</li>
+                </ul>
+
+                <h3 class="mt">Tool Manufacturing</h3>
+                <p>
+                    We manufacture injection molding tools up to <b>850T</b>.
+                    This in-house capability ensures high precision, rapid prototyping,
+                    and complete control over quality and lead time.
+                </p>
             </div>
 
-            <div class="col-md-3 col-sm-6">
-                <div class="plant-card">
-                    <img src="uploads/DSC_8594.jpg" alt="Greater Noida Plant">
-                    <h4>Greater Noida</h4>
-                </div>
+            <!-- CENTER IMAGE -->
+            <div class="toolroom-img">
+                <img src="uploads/toolroom.png" alt="VMC Machine">
             </div>
 
-            <div class="col-md-3 col-sm-6">
-                <div class="plant-card">
-                    <img src="uploads/DSC_8597.jpg" alt="Pantnagar Plant">
-                    <h4>Pantnagar (Rudrapur)</h4>
-                </div>
+            <!-- RIGHT IMAGE -->
+            <div class="toolroom-img">
+                <img src="uploads/toolroom1.png" alt="Grinding Machine">
             </div>
-            <div class="col-md-3 col-sm-6">
-                <div class="plant-card">
-                    <img src="uploads/DSC_8597.jpg" alt="Pantnagar Plant">
-                    <h4>Tool Room</h4>
-                </div>
-            </div>
-
-            
 
         </div>
 
+    </div>
+</section>
+
+
       <!-- PUNE DETAILS -->
-<div class="plant-detail">
+<div id="pune"class="plant-detail">  
     <h3>Pune Facility</h3>
     <ul class="type-list">
         <li data-text="30 Injection molding machines (100T – 1600T)"></li>
         <li data-text="Advanced fan balancing machines"></li>
         <li data-text="Hot plate & ultrasonic welding systems"></li>
         <li data-text="Fully equipped quality inspection laboratory"></li>
-    </ul>
-</div>
+    </ul>    
+</div>    
 
 <!-- GREATER NOIDA DETAILS -->
-<div class="plant-detail">
+<div id="noida" class="plant-detail">
     <h3>Greater Noida Facility</h3>
     <ul class="type-list">
         <li data-text="6 Injection molding machines (180T – 1000T)"></li>
         <li data-text="Multiple Special Purpose Machines (SPMs)"></li>
         <li data-text="Fan balancing & automated assembly lines"></li>
         <li data-text="Advanced testing and inspection facilities"></li>
-    </ul>
-</div>
+    </ul>    
+</div>    
 
 <!-- MACHINES & CAPACITIES -->
 <div class="plant-detail">
@@ -366,19 +497,9 @@ footer.footer .widget {
         <li data-text="50+ Injection molding machines"></li>
         <li data-text="High tonnage capability up to <strong>1600T</strong>"></li>
         <li data-text="Multiple SPMs for post-molding operations"></li>
-    </ul>
-</div>
+    </ul>    
+</div>    
 
-<!-- TOOL ROOM CAPABILITIES -->
-<div class="plant-detail">
-    <h3>Tool Room Capabilities</h3>
-    <ul class="type-list">
-        <li data-text="VMC – 1300 × 700 × 700 (2 Nos)"></li>
-        <li data-text="EDM – 500 × 450 × 300 (2 Nos)"></li>
-        <li data-text="Conventional machines – Lathe, Milling, Grinding, Drilling"></li>
-        <li data-text="Injection molding tools up to <strong>850T</strong>"></li>
-    </ul>
-</div>
 
 
 
@@ -541,21 +662,31 @@ document.addEventListener("DOMContentLoaded", () => {
     animatedItems.forEach(item => observer.observe(item));
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
 
-    const lists = document.querySelectorAll(".type-list");
+    const plantDetails = document.querySelectorAll(".plant-detail");
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                typeLines(entry.target);
+
+                // ADD SLIDE-IN EFFECT
+                entry.target.classList.add("show");
+
+                // START TYPING
+                const list = entry.target.querySelector(".type-list");
+                if (list) typeLines(list);
+
                 observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.3 });
 
-    lists.forEach(list => observer.observe(list));
+    plantDetails.forEach((detail, index) => {
+        // Alternate left / right
+        detail.classList.add(index % 2 === 0 ? "from-left" : "from-right");
+        observer.observe(detail);
+    });
 
     function typeLines(list) {
         const items = list.querySelectorAll("li");
@@ -587,9 +718,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
-
-
-
 </script>
 
 
