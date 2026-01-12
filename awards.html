@@ -110,76 +110,65 @@
 
 
 
-<!-- MAIN CONTENT -->
-<div class="section wb">
-<div class="container">
+<ul class="timeline awards-timeline">
 
-    <div class="section-title text-center">
-        <h3>Awards & Certifications</h3>
-    </div>
-
-    <ul class="timeline awards-timeline">
-
-  <li>
-    <div class="timeline-badge1"></div>
+  <li >
+  <span class="timeline-badge">2008</span>
     <div class="timeline-panel">
-      <h4>QCFI Best Practices Award</h4>
-    </div>
-  </li>
-
-  <li class="timeline-inverted">
-    <div class="timeline-badge"></div>
-    <div class="timeline-panel">
-      <h4>Endurance TPM Awards</h4>
+      <h4>2008</h4>
+      <ul class="award-list">
+        <li>QCFI Best Practices Award</li>
+        <li>Varroc Appreciation Award</li>
+      </ul>
     </div>
   </li>
 
   <li>
-    <div class="timeline-badge1"></div>
+  <span class="timeline-badge">2010–2012</span>
     <div class="timeline-panel">
-      <h4>Visteon Best Quality & Delivery Awards</h4>
-    </div>
-  </li>
-
-  <li class="timeline-inverted">
-    <div class="timeline-badge"></div>
-    <div class="timeline-panel">
-       <h4>QCFI Excellence & Gold Awards</h4>
-    </div>
-  </li>
-
-  <li>
-    <div class="timeline-badge1"></div>
-    <div class="timeline-panel">
-      <h4>Varroc Best Supplier Award (Quality)</h4>
-    </div>
-  </li>
-
-  <li class="timeline-inverted">
-    <div class="timeline-badge"></div>
-    <div class="timeline-panel">
-      <h4>Lear Supplier of the Year</h4>
+      <h4>2010 – 2012</h4>
+      <ul class="award-list">
+        <li>Endurance TPM Progress Award</li>
+        <li>LEAR Outstanding Performance Award</li>
+        <li>PLASTICON Gold Award</li>
+      </ul>
     </div>
   </li>
 
   <li>
-    <div class="timeline-badge1"></div>
+     <span class="timeline-badge">2013–2015</span>
     <div class="timeline-panel">
-     
-      <h4>TTR Best Kaizen Award (2025)</h4>
+      <h4>2013 – 2015</h4>
+      <ul class="award-list">
+        <li>Endurance TPM Implementation Award</li>
+        <li>Visteon Best Quality Performance</li>
+        <li>Visteon Best Delivery Performance</li>
+        <li>Pune District Industries Award</li>
+        <li>LEAR Supplier of the Year Award</li>
+      </ul>
+    </div>
+  </li>
+
+  <li >
+   <span class="timeline-badge">2016 – 2025</span>
+    <div class="timeline-panel">
+      <h4>2016 – 2025</h4>
+      <ul class="award-list">
+        <li>Varroc Best Supplier Award – Quality (2016, 2019)</li>
+        <li>SMRC Award for New Product Development</li>
+        <li>QCFI Excellence Award (2021)</li>
+        <li>QCFI Gold Award (2022)</li>
+        <li>TTR Best Kaizen Award (2025)</li>
+      </ul>
     </div>
   </li>
 
 </ul>
 
-    </div>
-
-</div>
-</div>
 
 
 
-<<footer class="footer">
+<footer class="footer">
     <div class="container">
         <div class="row">
 
@@ -292,20 +281,26 @@ window.addEventListener("scroll", function () {
 <script src="js/all.js"></script>
 <script src="js/custom.js"></script>
 <script>
-const items = document.querySelectorAll(".timeline > li");
+document.addEventListener("DOMContentLoaded", function () {
 
-function animateTimeline(){
-  items.forEach(li => {
-    const rect = li.getBoundingClientRect();
-    if(rect.top < window.innerHeight - 80){
-      li.classList.add("show");
-    }
-  });
-}
+  const items = document.querySelectorAll(".timeline > li");
 
-animateTimeline();
-window.addEventListener("scroll", animateTimeline);
+  function revealTimeline() {
+    const trigger = window.innerHeight * 0.85;
+
+    items.forEach(item => {
+      const top = item.getBoundingClientRect().top;
+      if (top < trigger) {
+        item.classList.add("show");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealTimeline);
+  revealTimeline(); // run once on load
+});
 </script>
+
 
 
 </body>

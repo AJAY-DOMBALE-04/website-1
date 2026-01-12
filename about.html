@@ -9,14 +9,13 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Site Metas -->
-    <title>FlaxSEO - Responsive HTML5 Template</title>  
+     <title>Sanjay Techno Plast</title>   
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+   
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -135,6 +134,15 @@
 .journey-timeline {
     position: relative;
     padding: 60px 0;
+}
+.lead{
+     font-size: 20px;
+     color: #444;
+     font-weight: 400;
+    max-width: 720px;
+    margin: 0 auto;
+    margin-top: 20px;
+     text-align: center;
 }
 
 /* Center vertical line */
@@ -267,7 +275,23 @@
 .bounce-img {
     animation: softBounce 2.5s ease-in-out infinite;
 }
+.journey-item {
+    opacity: 0;
+    transition: all 0.9s ease;
+}
 
+.journey-item.left {
+    transform: translateX(-80px);
+}
+
+.journey-item.right {
+    transform: translateX(80px);
+}
+
+.journey-item.active {
+    opacity: 1;
+    transform: translateX(0);
+}
 
 .section-title h2{
     margin-top: -40px;
@@ -782,6 +806,51 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- JS -->
 <script src="js/all.js"></script>
 <script src="js/custom.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const blocks = document.querySelectorAll(".about-block");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const items = entry.target.querySelectorAll(".slide-left, .slide-right");
+
+                    items.forEach((item, index) => {
+                        item.style.transitionDelay = `${index * 0.25}s`;
+                        item.classList.add("active");
+                    });
+
+                    observer.unobserve(entry.target); // animate only once
+                }
+            });
+        },
+        { threshold: 0.35 }
+    );
+
+    blocks.forEach(block => observer.observe(block));
+});
+const journeyItems = document.querySelectorAll(".journey-item");
+
+const journeyObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                journeyObserver.unobserve(entry.target);
+            }
+        });
+    },
+    {
+        threshold: 0.2
+    }
+);
+
+journeyItems.forEach(item => {
+    journeyObserver.observe(item);
+});
+</script>
+
 
 </body>
 </html>
