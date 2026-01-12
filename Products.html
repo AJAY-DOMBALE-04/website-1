@@ -9,14 +9,12 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
  
      <!-- Site Metas -->
-    <title>FlaxSEO - Responsive HTML5 Template</title>  
+    <title>Sanjay Techno Plast</title>  
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+   
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -35,7 +33,64 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+<style>
+    .container-text-center h3{
+          margin-top: 0px;
+    font-size: 42px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #1FB6FF, #28F0C0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 15px;
+    }
+  #case-study-box > .container {
+    max-width: 1800px;          /* wider content */
+    padding-left: 0px;         /* reduce left gap */
+    padding-right: 0px;        /* reduce right gap */
+   
+}
+/* =====================================
+   PRODUCTS GRID – CSS GRID (NO ISOTOPE)
+   ===================================== */
 
+#da-thumbs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;                              /* space between cards */
+    max-width: 1500px;                     /* controls width */
+    margin: 0 auto;                        /* center grid */
+    padding: 0 10px;                       /* small side padding */
+}
+/* =====================================
+   PRODUCTS SECTION – FINAL WIDTH FIX
+   ===================================== */
+
+/* Kill all side padding from section + container */
+#case-study-box {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+#case-study-box > .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+}
+#da-thumbs {
+    max-width: 1500px;     /* controls how wide grid is */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;    /* SMALL margins */
+    padding-right: 10px;
+}
+
+
+
+    
+</style>
 </head>
 <body class="seo_version">
 
@@ -87,10 +142,9 @@
         </div>
     </nav>
 </header>
-
-    <div class="all-page-title" style="background-image:url(uploads/products2.png);">
+    <div class="all-page-title" style="background-image:url();">
         <div class="container text-center">
-            <!--<h1>Products</h1>-->
+            <h3>Products</h3>
         </div>
 		<!--Page -->
        
@@ -122,20 +176,40 @@
     </svg>
 	
 	<div id="case-study-box" class="section wb">
-        <div class="container">
-        <div class="container-text-center"><h1>Our Products</h1></div>
+       <div class="container">
+
+        <div class="container-text-center"><h3>Our Products</h3></div>
         
             <div id="da-thumbs" class="da-thumbs portfolio">
                 <div class="post-media pitem item-w1 item-h1 cat1">
-                    <a href="uploads/version_01.jpg" data-rel="prettyPhoto[gal]">
-                        <img src="uploads/Interior1.png" alt="" class="img-responsive">
-                        <div class="card-overlay">
-							<h3 class="card-title">Automotive Interior Components</h3>
-							<p class="card-half-overlay">Center consoles, door trims, dashboard parts, instrument cluster housings, pillars and interior trims designed for durability and premium finish</p>
-                            <i class="flaticon-unlink"></i>
-                        </div>
-                    </a>
-                </div>
+    <!-- MAIN CLICK IMAGE -->
+    <a href="uploads/Interior1.png"
+       rel="prettyPhoto[interior]"
+       title="Automotive Interior Components – Center Console">
+
+        <img src="uploads/Interior1.png" alt="" class="img-responsive">
+
+        <div class="card-overlay">
+            <h3 class="card-title">Automotive Interior Components</h3>
+            <p class="card-half-overlay">
+                Center consoles, door trims, dashboard parts, instrument cluster housings, pillars and interior trims designed for durability and premium finish
+            </p>
+            <i class="flaticon-unlink"></i>
+        </div>
+    </a>
+
+    <!-- HIDDEN SLIDER IMAGES -->
+    <a href="uploads/Interior2.png"
+       rel="prettyPhoto[interior]"
+       title="Door Trims & Panels"
+       style="display:none;"></a>
+
+    <a href="uploads/Interior5.png"
+       rel="prettyPhoto[interior]"
+       title="Dashboard & Instrument Housing"
+       style="display:none;"></a>
+</div>
+
                 <div class="post-media pitem item-w1 item-h1 cat2">
                     <a href="uploads/version_02.jpg" data-rel="prettyPhoto[gal]">
                         <img src="uploads/HVAC.png" alt="" class="img-responsive">
@@ -310,8 +384,22 @@ window.addEventListener("scroll", function () {
     <!-- ALL JS FILES -->
     <script src="js/all.js"></script>
     <!-- ALL PLUGINS -->
+     <script>
+$(document).ready(function () {
+    $("a[rel^='prettyPhoto']").prettyPhoto({
+        theme: 'pp_default',
+        overlay_gallery: true,   // 🔥 REQUIRED
+        slideshow: false,
+        autoplay_slideshow: false,
+        social_tools: false,
+        deeplinking: false
+    });
+});
+
+</script>
+
     <script src="js/custom.js"></script>
-	<script src="js/portfolio.js"></script>
+	
 	<script src="js/hoverdir.js"></script>   
 
 </body>

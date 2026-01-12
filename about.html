@@ -9,14 +9,13 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Site Metas -->
-    <title>FlaxSEO - Responsive HTML5 Template</title>  
+     <title>Sanjay Techno Plast</title>   
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+   
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -36,6 +35,10 @@
     margin-top: 70px;
     display: flex;
     align-items: center;
+}
+.about-container {
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
 /* Text styling */
@@ -62,42 +65,98 @@
     transform: scale(1.05);
 }
 
+
+.section-title h2 {
+    margin-top: 0px;
+    font-size: 42px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #1FB6FF, #28F0C0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.section-title p {
+    font-size: 20px;
+    color: #555;
+    max-width: 720px;
+    margin: 0 auto;
+}
+.about-text h3 {
+    font-size: 30px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #1FB6FF, #28F0C0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 18px;
+}
+.about-text p {
+    font-size: 20px;
+    line-height: 1.9;
+    color: #444;
+    margin-bottom: 15px;
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.9;
+    letter-spacing: 0.2px;
+}
+
+.about-block {
+    margin: 120px 0; /* MORE SPACE BETWEEN SECTIONS */
+    display: flex;
+    align-items: center;
+}
+
+.about-img {
+    max-width: 90%;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.about-text::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #1FB6FF, #28F0C0);
+    margin-top: 18px;
+    border-radius: 3px;
+}
+
+#clouds {
+    display: block;
+    margin-bottom: -90px; 
+}
+
 /* ==============================
    SLIDE ANIMATION
    ============================== */
-
 .slide-left,
 .slide-right {
     opacity: 0;
     transform: translateX(60px);
-    animation: slideIn 1s ease forwards;
+    transition: all 0.9s ease;
 }
 
 .slide-left {
     transform: translateX(-60px);
 }
 
-.about-block:nth-child(2) .slide-left,
-.about-block:nth-child(2) .slide-right {
-    animation-delay: 0.2s;
+.slide-left.active,
+.slide-right.active {
+    opacity: 1;
+    transform: translateX(0);
 }
 
-.about-block:nth-child(3) .slide-left,
-.about-block:nth-child(3) .slide-right {
-    animation-delay: 0.4s;
-}
 
-.about-block:nth-child(4) .slide-left,
-.about-block:nth-child(4) .slide-right {
-    animation-delay: 0.6s;
-}
 
-@keyframes slideIn {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
 
 /* ==============================
    MOBILE RESPONSIVE
@@ -118,13 +177,19 @@
     }
 }
 
-
-
-
 /* ===== Journey Timeline ===== */
 .journey-timeline {
     position: relative;
     padding: 40px 0;
+}
+.lead{
+     font-size: 20px;
+     color: #444;
+     font-weight: 400;
+    max-width: 720px;
+    margin: 0 auto;
+    margin-top: 20px;
+     text-align: center;
 }
 
 .journey-timeline::before {
@@ -222,7 +287,23 @@
 .bounce-img {
     animation: softBounce 2.5s ease-in-out infinite;
 }
+.journey-item {
+    opacity: 0;
+    transition: all 0.9s ease;
+}
 
+.journey-item.left {
+    transform: translateX(-80px);
+}
+
+.journey-item.right {
+    transform: translateX(80px);
+}
+
+.journey-item.active {
+    opacity: 1;
+    transform: translateX(0);
+}
 
 
 
@@ -321,12 +402,13 @@
 
 <!-- ABOUT US SECTION -->
 <div id="about" class="section wb">
-    <div class="container">
+    <div class="container-fluid about-container">
+
 
         <!-- SECTION TITLE -->
         <div class="section-title text-center">
             <h2><b>About Us</b></h2>
-            <p class="lead">
+            <p >
                 Learn more about our company, vision, values, and management philosophy.
             </p>
         </div>
@@ -623,6 +705,51 @@ window.addEventListener("scroll", function () {
 <!-- JS -->
 <script src="js/all.js"></script>
 <script src="js/custom.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const blocks = document.querySelectorAll(".about-block");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const items = entry.target.querySelectorAll(".slide-left, .slide-right");
+
+                    items.forEach((item, index) => {
+                        item.style.transitionDelay = `${index * 0.25}s`;
+                        item.classList.add("active");
+                    });
+
+                    observer.unobserve(entry.target); // animate only once
+                }
+            });
+        },
+        { threshold: 0.35 }
+    );
+
+    blocks.forEach(block => observer.observe(block));
+});
+const journeyItems = document.querySelectorAll(".journey-item");
+
+const journeyObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                journeyObserver.unobserve(entry.target);
+            }
+        });
+    },
+    {
+        threshold: 0.2
+    }
+);
+
+journeyItems.forEach(item => {
+    journeyObserver.observe(item);
+});
+</script>
+
 
 </body>
 </html>
