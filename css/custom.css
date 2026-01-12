@@ -51,6 +51,35 @@
     align-items: center;
 }
 
+/* ===============================
+   HOME BACKGROUND SLIDESHOW
+   =============================== */
+/* ===============================
+   HOME BACKGROUND SLIDER (MANUAL)
+   =============================== */
+
+#home {
+    min-height: 800px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.8s ease-in-out;
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .slider-arrow {
+        font-size: 32px;
+        padding: 8px 12px;
+    }
+} */
+
+
+
+
 
 .btn-primary {
   background: linear-gradient(135deg, #1FB6FF, #28F0C0);
@@ -94,6 +123,7 @@
     animation: fadeInUp 0.8s ease forwards;
     opacity: 0;
 }
+
 
 /* ===============================
    PRODUCT CATEGORY GRID FIX
@@ -653,6 +683,7 @@ footer.footer {
 
 footer.footer .container {
     padding-bottom: 0 !important;
+    
 }
 
 
@@ -822,7 +853,18 @@ footer.footer ul {
     margin-left: auto;
     margin-right: auto;
 }
+<<<<<<< HEAD
+
+
+
+.container-fuild {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 0px;
+}
+=======
 /* =====================================
    PRODUCTS SECTION – JUST MAKE IT WIDER
    ===================================== */
 
+>>>>>>> 187b790dbb826ef66cd75d7df29939dc86cb7c15

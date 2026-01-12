@@ -24,163 +24,116 @@
     <link rel="stylesheet" href="css/versions.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
 
-/* ==============================
-   ABOUT PAGE – SLIDE ANIMATION
-   ============================== */
+/* ===============================
+   ABOUT SECTION – TEXT VISIBILITY
+   =============================== */
+/* ===============================
+   ABOUT TEXT VISIBILITY
+   =============================== */
 
-.about-block {
-    margin-top: 70px;
-    display: flex;
-    align-items: center;
-}
-.about-container {
-    padding-left: 80px;
-    padding-right: 80px;
-}
-
-/* Text styling */
-.about-text h3 {
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: #0b3c5d;
-}
-
-.about-text p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #444;
-}
-
-/* Image styling */
-.about-img {
-    max-width: 90%;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-    transition: transform 0.4s ease;
-}
-
-.about-img:hover {
-    transform: scale(1.05);
-}
-
-
-.section-title h2 {
-    margin-top: 0px;
-    font-size: 42px;
-    font-weight: 800;
-    background: linear-gradient(135deg, #1FB6FF, #28F0C0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
-
-.section-title p {
-    font-size: 20px;
-    color: #555;
-    max-width: 720px;
-    margin: 0 auto;
-}
 .about-text h3 {
     font-size: 30px;
     font-weight: 700;
-    background: linear-gradient(135deg, #1FB6FF, #28F0C0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 18px;
+    color: #111;
+    margin-bottom: 22px;
+    margin-top: 90px;
 }
-.about-text p {
+
+.about-points li {
     font-size: 20px;
+    color: #222;
     line-height: 1.9;
-    color: #444;
-    margin-bottom: 15px;
-    text-align: justify;
-    text-justify: inter-word;
-    line-height: 1.9;
-    letter-spacing: 0.2px;
-}
-
-.about-block {
-    margin: 120px 0; /* MORE SPACE BETWEEN SECTIONS */
+    margin-bottom: 6px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    gap: 12px;
+    font-weight: 500;
+    margin-top: 20px;
 }
 
-.about-img {
-    max-width: 90%;
-    border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+/* ICON STYLE */
+.about-points i {
+    color: #0a5c6b;   /* blue-green mix */
+    font-size: 16px;
+    margin-top: 5px;
 }
 
-.about-img:hover {
-    transform: scale(1.06);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
-}
+/* ===============================
+   SCROLL ANIMATION INITIAL STATE
+   =============================== */
 
-.about-text::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(135deg, #1FB6FF, #28F0C0);
-    margin-top: 18px;
-    border-radius: 3px;
-}
-
-#clouds {
-    display: block;
-    margin-bottom: -90px; 
-}
-
-/* ==============================
-   SLIDE ANIMATION
-   ============================== */
 .slide-left,
 .slide-right {
     opacity: 0;
-    transform: translateX(60px);
     transition: all 0.9s ease;
 }
 
+/* Text from LEFT */
 .slide-left {
-    transform: translateX(-60px);
+    transform: translateX(-90px);
 }
 
-.slide-left.active,
-.slide-right.active {
+/* Image from RIGHT */
+.slide-right {
+    transform: translateX(90px);
+}
+
+/* When visible */
+.slide-left.show,
+.slide-right.show {
     opacity: 1;
     transform: translateX(0);
 }
 
+/* ===============================
+   IMAGE EFFECT
+   =============================== */
 
+.about-img {
+    width: 90%;
+    border-radius: 12px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
 
+.about-img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 22px 45px rgba(0,0,0,0.18);
+}
 
-/* ==============================
-   MOBILE RESPONSIVE
-   ============================== */
+/* ===============================
+   MOBILE VIEW
+   =============================== */
+
 @media (max-width: 768px) {
-    .about-block {
-        flex-direction: column;
-        text-align: center;
+    .slide-left,
+    .slide-right {
+        transform: translateY(40px);
+    }
+
+    .slide-left.show,
+    .slide-right.show {
+        transform: translateY(0);
     }
 
     .about-img {
-        margin-top: 20px;
-    }
-
-    .slide-left,
-    .slide-right {
-        transform: translateY(30px);
+        width: 100%;
+        margin-top: 25px;
     }
 }
+
+
+
+
+
 
 /* ===== Journey Timeline ===== */
 .journey-timeline {
     position: relative;
-    padding: 40px 0;
+    padding: 60px 0;
 }
 .lead{
      font-size: 20px;
@@ -192,6 +145,7 @@
      text-align: center;
 }
 
+/* Center vertical line */
 .journey-timeline::before {
     content: '';
     position: absolute;
@@ -203,23 +157,37 @@
     transform: translateX(-50%);
 }
 
+/* Timeline items */
 .journey-item {
     position: relative;
     width: 50%;
     padding: 20px 40px;
     box-sizing: border-box;
+    opacity: 0;
+    transition: all 1s ease;
 }
 
+/* LEFT SIDE */
 .journey-item.left {
     left: 0;
     text-align: right;
+    transform: translateX(-90px);
 }
 
+/* RIGHT SIDE */
 .journey-item.right {
     left: 50%;
     text-align: left;
+    transform: translateX(90px);
 }
 
+/* SHOW animation (on scroll) */
+.journey-item.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Timeline circle */
 .journey-circle {
     position: absolute;
     top: 25px;
@@ -240,31 +208,51 @@
     right: auto;
 }
 
+/* Year text */
 .journey-year {
     font-size: 20px;
     font-weight: bold;
     color: #ff9800;
+    margin-bottom: 8px;
 }
 
+/* ===============================
+   MOBILE VIEW
+   =============================== */
 @media (max-width: 768px) {
     .journey-timeline::before {
         left: 20px;
     }
+
     .journey-item {
         width: 100%;
         padding-left: 60px;
         padding-right: 20px;
         text-align: left;
+        transform: translateY(40px);
     }
+
     .journey-item.left,
     .journey-item.right {
         left: 0;
     }
+
+    .journey-item.show {
+        transform: translateY(0);
+    }
+
     .journey-circle {
         left: 2px;
         right: auto;
     }
 }
+
+/* ===== Section title fix ===== */
+.section-title {
+    margin-top: -70px;
+}
+
+
 
 /* Center image vertically */
 .about-image-center {
@@ -305,10 +293,93 @@
     transform: translateX(0);
 }
 
+.section-title h2{
+    margin-top: -40px;
+    font-size: 40px;
+}
+
+.lead1{
+    font-size: 22px;
+    color: #ff9800;
+}
 
 
 
+/* ===============================
+   FOOTER TEXT VISIBILITY FIX
+   =============================== */
 
+/* Footer headings */
+footer.footer h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;              /* dark heading */
+    margin-bottom: 14px;
+}
+
+/* Footer paragraph */
+footer.footer p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #222;              /* darker readable text */
+    margin-bottom: 0;
+}
+
+/* Footer list items */
+footer.footer .footer-links li {
+    font-size: 16px;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+/* Footer links */
+footer.footer .footer-links a {
+    font-size: 16px;
+    color: #222;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+footer.footer .footer-links a:hover {
+    color: #007c8a;           /* blue-green highlight */
+    text-decoration: none;
+}
+
+/* Social icons */
+footer.footer .social-md i {
+    font-size: 16px;
+    color: #007c8a;
+}
+
+/* Widget spacing */
+footer.footer .widget {
+    padding: 0 20px;
+}
+
+/* ===============================
+   COPYRIGHT TEXT
+   =============================== */
+
+.footer-company-name {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+}
+
+
+.container-fuild {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 0px;
+}
+
+.container-fuild1 {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: -90px;
+}
 
     </style>
 
@@ -374,98 +445,68 @@
 </div>
 
 
-<svg id="clouds" class="hidden-xs" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 85 100" preserveAspectRatio="none">
-        <path d="M-5 100 Q 0 20 5 100 Z
-            M0 100 Q 5 0 10 100
-            M5 100 Q 10 30 15 100
-            M10 100 Q 15 10 20 100
-            M15 100 Q 20 30 25 100
-            M20 100 Q 25 -10 30 100
-            M25 100 Q 30 10 35 100
-            M30 100 Q 35 30 40 100
-            M35 100 Q 40 10 45 100
-            M40 100 Q 45 50 50 100
-            M45 100 Q 50 20 55 100
-            M50 100 Q 55 40 60 100
-            M55 100 Q 60 60 65 100
-            M60 100 Q 65 50 70 100
-            M65 100 Q 70 20 75 100
-            M70 100 Q 75 45 80 100
-            M75 100 Q 80 30 85 100
-            M80 100 Q 85 20 90 100
-            M85 100 Q 90 50 95 100
-            M90 100 Q 95 25 100 100
-            M95 100 Q 100 15 105 100 Z">
-        </path>
-    </svg>
+
 <!-- ABOUT US SECTION -->
 
+<!-- ABOUT US SECTION -->
 <!-- ABOUT US SECTION -->
 <div id="about" class="section wb">
-    <div class="container-fluid about-container">
-
+    <div class="container-fuild">
 
         <!-- SECTION TITLE -->
         <div class="section-title text-center">
-            <h2><b>About Us</b></h2>
-            <p >
-                Learn more about our company, vision, values, and management philosophy.
+            <h2>About Us</h2>
+            <p class="lead1">
+               <b> Learn more about our company, vision, values, and management philosophy.</b>
             </p>
         </div>
 
-        <!-- COMPANY OVERVIEW (IMAGE RIGHT) -->
+        <!-- COMPANY OVERVIEW -->
         <div class="row about-block">
             <div class="col-md-6 about-text slide-left">
                 <h3>Company Overview</h3>
-                <p>
-                    <strong>Sanjay Techno Plast Pvt. Ltd.</strong> is a professionally managed manufacturing
-                    company specializing in automotive and industrial plastic components.
-                </p>
-                <p>
-                    With a strong foundation in engineering excellence, we deliver customized plastic
-                    solutions that meet global quality standards with precision and reliability.
-                </p>
+                <ul class="about-points">
+    <li><i class="fa-solid fa-circle-check"></i> Professionally managed manufacturer of automotive and industrial plastic components</li>
+    <li><i class="fa-solid fa-gear"></i> Engineering-driven manufacturing and quality systems</li>
+    <li><i class="fa-solid fa-award"></i> Customized plastic solutions meeting global standards</li>
+    <li><i class="fa-solid fa-shield-halved"></i> High precision, consistency, and reliability</li>
+</ul>
+
             </div>
             <div class="col-md-6 text-center slide-right">
-                <img src="images/factory2.jpg" class="img-responsive img-rounded about-img" alt="Company Overview">
+                <img src="images/factory2.jpg" class="about-img" alt="Company Overview">
             </div>
         </div>
 
-        <!-- VISION & CORE VALUES (IMAGE LEFT) -->
-        <div class="row about-block">
+        <!-- VISION & CORE VALUES -->
+        <div class="row about-block reverse">
             <div class="col-md-6 text-center slide-left">
-                <img src="images/Mold1.png" class="img-responsive img-rounded about-img" alt="Vision & Values">
+                <img src="images/Mold1.png" class="about-img" alt="Vision & Values">
             </div>
             <div class="col-md-6 about-text slide-right">
                 <h3>Vision & Core Values</h3>
-                <p>
-                    <strong>Our Vision:</strong><br>
-                    To be a preferred global partner for high-quality plastic components through
-                    innovation, reliability, and operational excellence.
-                </p>
-                <p>
-                    <strong>Our Core Values:</strong><br>
-                    Quality commitment, continuous improvement, ethical practices, customer satisfaction,
-                    and long-term partnerships.
-                </p>
+                <ul class="about-points">
+                    <li><i class="fa-solid fa-circle-check"></i> To be a preferred global partner for plastic components</li>
+                    <li><i class="fa-solid fa-gear"></i>Focus on innovation, reliability, and operational excellence</li>
+                    <li><i class="fa-solid fa-award"></i>Strong commitment to quality and continuous improvement</li>
+                    <li><i class="fa-solid fa-shield-halved"></i>Ethical business practices and long-term partnerships</li>
+                </ul>
             </div>
         </div>
 
-        <!-- MANAGEMENT PHILOSOPHY (IMAGE RIGHT) -->
+        <!-- MANAGEMENT PHILOSOPHY -->
         <div class="row about-block">
             <div class="col-md-6 about-text slide-left">
                 <h3>Management Philosophy</h3>
-                <p>
-                    Our leadership philosophy is rooted in engineering-driven decision making,
-                    continuous improvement, and customer-focused execution.
-                </p>
-                <p>
-                    We empower teams, adopt modern manufacturing practices, and ensure transparency
-                    for sustainable growth.
-                </p>
+                <ul class="about-points">
+                    <li><i class="fa-solid fa-circle-check"></i>Engineering-driven and data-based decision making</li>
+                    <li><i class="fa-solid fa-gear"></i>Customer-focused execution and transparency</li>
+                    <li><i class="fa-solid fa-award"></i>Empowering teams through modern manufacturing practices</li>
+                    <li><i class="fa-solid fa-shield-halved"></i>Building sustainable growth through continuous improvement</li>
+                </ul>
             </div>
             <div class="col-md-6 text-center slide-right">
-                <img src="images/Sanjaygroup_img_DSC_8593.jpg" class="img-responsive img-rounded about-img" alt="Management">
+                <img src="images/Sanjaygroup_img_DSC_8593.jpg" class="about-img" alt="Management Philosophy">
             </div>
         </div>
 
@@ -474,76 +515,113 @@
 
 
 <div id="journey" class="section wb">
-    <div class="container">
+    <div class="container-fuild">
 
         <div class="section-title text-center">
             <h3>Journey of Excellence</h3>
-            <h4 class="lead">A timeline of growth, innovation, and manufacturing excellence</h4>
+            <h4 class="lead1">A timeline of growth, innovation, and manufacturing excellence</h4>
         </div>
 
         <div class="journey-timeline">
 
+            <!-- 2004 -->
             <div class="journey-item left">
                 <div class="journey-circle">1</div>
-                <span class="journey-year">2004</span>
+                <span class="journey-year">2004: Injection Molding</span>
                 <h3><b>Foundation</b></h3>
-                <h4>Started injection molding operations, laying the foundation of Sanjay Techno Plast Pvt. Ltd.</h4>
+                <h4>
+                    Began injection molding operations, serving key industrial clients.
+                </h4>
             </div>
 
+            <!-- 2006 -->
             <div class="journey-item right">
                 <div class="journey-circle">2</div>
-                <span class="journey-year">2006</span>
-                <h3><b>First Product Segment</b></h3>
-                <h4>Entered the two-wheeler mirror assemblies segment.</h4>
+                <span class="journey-year">2006: 2-Wheeler Mirrors</span>
+                <h3><b>Product Expansion</b></h3>
+                <h4>
+                    Expanded into manufacturing two-wheeler mirror assemblies.
+                </h4>
             </div>
 
+            <!-- 2007 -->
             <div class="journey-item left">
                 <div class="journey-circle">3</div>
-                <span class="journey-year">2007</span>
+                <span class="journey-year">2007: Cook Stove Venture</span>
                 <h3><b>Diversification</b></h3>
-                <h4>Launched clean cook stove manufacturing operations.</h4>
+                <h4>
+                    Ventured into clean cook stove manufacturing, showcasing innovation.
+                </h4>
             </div>
 
+            <!-- 2008 -->
             <div class="journey-item right">
                 <div class="journey-circle">4</div>
-                <span class="journey-year">2008</span>
+                <span class="journey-year">2008: New Pune Factory</span>
                 <h3><b>Manufacturing Expansion</b></h3>
-                <h4>Established an integrated manufacturing facility at Ranjangaon, Pune.</h4>
+                <h4>
+                    Integrated molding, sheet metal, and assembly factory opened at Ranjangaon, Pune.
+                </h4>
             </div>
 
+            <!-- 2009 -->
             <div class="journey-item left">
                 <div class="journey-circle">5</div>
-                <span class="journey-year">2009</span>
-                <h3><b>Automotive Growth</b></h3>
-                <h4>Started automotive HVAC and engine cooling assemblies in collaboration with Delphi.</h4>
+                <span class="journey-year">2009: Delphi Partnership</span>
+                <h3><b>Automotive Entry</b></h3>
+                <h4>
+                    Secured contracts for automotive HVAC and engine cooling assemblies with Delphi.
+                </h4>
             </div>
 
+            <!-- 2012 -->
             <div class="journey-item right">
                 <div class="journey-circle">6</div>
-                <span class="journey-year">2012</span>
-                <h3><b>Capacity Addition</b></h3>
-                <h4>Pantnagar plant established to strengthen nationwide presence.</h4>
+                <span class="journey-year">2012: Pantnagar Plant</span>
+                <h3><b>Capacity Expansion</b></h3>
+                <h4>
+                    Opened a new manufacturing plant in Pantnagar, Uttarakhand, expanding reach.
+                </h4>
             </div>
 
+            <!-- 2013 -->
             <div class="journey-item left">
                 <div class="journey-circle">7</div>
-                <span class="journey-year">2013</span>
-                <h3><b>Regional Expansion</b></h3>
-                <h4>Greater Noida plant commissioned to serve northern region customers.</h4>
+                <span class="journey-year">2013: Greater Noida Plant</span>
+                <h3><b>National Presence</b></h3>
+                <h4>
+                    Established another plant in Greater Noida, strengthening national presence.
+                </h4>
             </div>
 
+            <!-- 2013 EcoSense -->
             <div class="journey-item right">
                 <div class="journey-circle">8</div>
-                <span class="journey-year">2013–2024</span>
-                <h3><b>Innovation Ventures</b></h3>
-                <h4>Innovation initiatives including EcoSense and IoT ventures (later divested).</h4>
+                <span class="journey-year">2013: EcoSense Appliances</span>
+                <h3><b>Innovation Initiative</b></h3>
+                <h4>
+                    Founded EcoSense Appliances, developing innovative cooking solutions (divested 2024).
+                </h4>
             </div>
 
+            <!-- 2014 -->
             <div class="journey-item left">
                 <div class="journey-circle">9</div>
-                <span class="journey-year">2020–2024</span>
-                <h3><b>Business Expansion</b></h3>
-                <h4>Automotive business expansion with capacity additions and technology upgrades.</h4>
+                <span class="journey-year">2014: Industrial IoT</span>
+                <h3><b>Technology Innovation</b></h3>
+                <h4>
+                    Conceptualized and developed industrial IoT business (divested as RYTINOW 2022).
+                </h4>
+            </div>
+
+            <!-- 2020-24 -->
+            <div class="journey-item right">
+                <div class="journey-circle">10</div>
+                <span class="journey-year">2020–2024: Capacity Expansion</span>
+                <h3><b>Growth Phase</b></h3>
+                <h4>
+                    Focused automotive business growth through capacity addition and new customer acquisition.
+                </h4>
             </div>
 
         </div>
@@ -552,16 +630,9 @@
 </div>
 
 
-    <div id="support" class="section db">
-        <div class="container">
-            <div class="section-title text-center">
-                <h3>Key Customers</h3>
-                <p class="lead">Our success is built on strong, long-term partnerships with OEMs and Tier-1 automotive suppliers, delivering consistent quality, reliability, and on-time performance.</p>
-            </div><!-- end title -->
 
-           
-            <!-- end row -->
-        </div><!-- end container -->
+    <div id="support" class="section db">
+        
     </div><!-- end section -->
 
  <svg id="clouds1" class="hidden-xs" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 85 100" preserveAspectRatio="none">
@@ -590,14 +661,13 @@
     </svg>
 
 <footer class="footer">
-    <div class="container">
+    <div class="container-fuild1">
         <div class="row">
 
             <!-- ABOUT COMPANY -->
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
-                        
                         <h3>Sanjay Techno Plast Pvt. Ltd.</h3>
                     </div>
                     <p>
@@ -612,7 +682,7 @@
             <div class="col-md-3 col-sm-3 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
-                        <h3>Contact Details</h3>
+                        <h3 class="contact">Contact Details</h3>
                     </div>
 
                     <ul class="footer-links">
@@ -631,8 +701,7 @@
                     </ul><!-- end links -->
                 </div>
             </div><!-- end col -->
-
-            <!-- INFORMATION -->
+             <!-- INFORMATION -->
             <div class="col-md-3 col-sm-3 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
@@ -648,7 +717,6 @@
                     </ul><!-- end links -->
                 </div>
             </div><!-- end col -->
-
             <!-- SOCIAL -->
             <div class="col-md-2 col-sm-2 col-xs-12">
                 <div class="widget clearfix">
@@ -663,7 +731,9 @@
                     </ul><!-- end links -->
                 </div>
             </div><!-- end col -->
+            
 
+            
         </div><!-- end row -->
     </div><!-- end container -->
 </footer><!-- end footer -->
@@ -678,9 +748,6 @@
                 </p>
             </div>
 
-            <div class="footer-right">
-               
-            </div>
         </div>
     </div>
 </div>
@@ -698,6 +765,40 @@ window.addEventListener("scroll", function () {
         header.classList.remove("scrolled");
     }
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".slide-left, .slide-right");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const journeyItems = document.querySelectorAll(".journey-item");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.25 });
+
+    journeyItems.forEach(item => observer.observe(item));
+});
+
+
+
 </script>
 
 
