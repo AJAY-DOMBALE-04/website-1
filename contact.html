@@ -26,6 +26,35 @@
     <link rel="stylesheet" href="css/versions.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        /* ===============================
+   WIDER PAGE LAYOUT (SAFE)
+   =============================== */
+
+.wide-container {
+    padding-left: 60px;
+    padding-right: 60px;
+    max-width: 1600px;   /* control how wide */
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1600px) {
+    .wide-container {
+        max-width: 1750px;
+    }
+}
+
+/* Mobile safety */
+@media (max-width: 768px) {
+    .wide-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+    </style>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
 
@@ -87,23 +116,8 @@
 </header>
 
 
-    <div class="all-page-title" style="background-image:url(images/pattern-4.png);">
-        <div class="container text-center">
-            <h1>Contact</h1>
-        </div>
-		<!--Page -->
-        <div class="page-info">
-            <div class="container">
-            	<div class="inner-container">
-                    <ul class="bread-crumb">
-                        <li><a href="index.html">Home</a></li>
-                        <li><span>Contact</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!--End Page-->
-    </div><!-- end section -->
+    
+		
 
     <svg id="clouds" class="hidden-xs" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 85 100" preserveAspectRatio="none">
         <path d="M-5 100 Q 0 20 5 100 Z
@@ -131,7 +145,7 @@
     </svg>
 
     <div id="support" class="section wb">
-        <div class="container">
+        <div class="container-fluid wide-container">
             <div class="section-title text-center">
                 <h3>Get In Touch</h3>
                 
@@ -155,7 +169,9 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                     <input type="text" name="phone" id="phone" class="form-control" placeholder="Your Phone Number">
                                 </div>
-                               
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" name="Location" id="Location" class="form-control" placeholder="Location">
+                                </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                     <textarea class="form-control" name="comments" id="comments" rows="6" placeholder="Give us more details.."></textarea>
                                 </div>
@@ -169,21 +185,17 @@
 				<div class="col-md-6">
 					<div class="map-box">
 						<div class="small-map">
-<iframe
-    src="https://www.google.com/maps?q=Pune%20India%20OR%20Greater%20Noida%20India%20OR%20Pantnagar%20India&output=embed"
-    width="100%"
-    height="500"
-    style="border:0;"
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-</iframe>
+<div class="row text-center" style="margin-bottom:15px;">
+  <button onclick="setMap('pune')" class="btn btn-primary">Pune</button>
+  <button onclick="setMap('noida')" class="btn btn-primary">Greater Noida</button>
+  <button onclick="setMap('pantnagar')" class="btn btn-primary">Pantnagar</button>
 </div>
 
-<div class="row text-center" style="margin-bottom:10px;">
-    <div class="col-md-4"><strong>📍 Pune</strong></div>
-    <div class="col-md-4"><strong>📍 Greater Noida</strong></div>
-    <div class="col-md-4"><strong>📍 Pantnagar</strong></div>
-</div>
+<iframe id="mapFrame"
+  src="https://www.google.com/maps?q=Pune%20India&output=embed"
+  width="100%" height="500" style="border:0;">
+</iframe>
+
 
 
 
@@ -196,24 +208,7 @@
     
 
     <div id="support" class="section db">
-        <div class="container">
-            <div class="section-title text-center">
-                <h3>Clients Logo</h3>
-            </div><!-- end title -->
-
-            <div class="row">
-                <div id="logo-carousel" class="owl-carousel">
-					<div> <img src="uploads/logo_01.png" alt=""> </div>
-					<div> <img src="uploads/logo_02.png" alt=""> </div>
-					<div> <img src="uploads/logo_03.png" alt=""> </div>
-					<div> <img src="uploads/logo_04.png" alt=""> </div>
-					<div> <img src="uploads/logo_05.png" alt=""> </div>
-					<div> <img src="uploads/logo_06.png" alt=""> </div>
-					<div> <img src="uploads/logo_01.png" alt=""> </div>
-					<div> <img src="uploads/logo_02.png" alt=""> </div>
-				</div>
-            </div><!-- end row -->
-        </div><!-- end container -->
+        
     </div><!-- end section -->
 
     <svg id="clouds1" class="hidden-xs" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 85 100" preserveAspectRatio="none">
@@ -242,7 +237,7 @@
     </svg>
 
 	<footer class="footer">
-    <div class="container">
+   <div class="container-fuild1">
         <div class="row">
 
             <!-- ABOUT COMPANY -->
@@ -355,6 +350,17 @@ window.addEventListener("scroll", function () {
 
     <!-- ALL JS FILES -->
     <script src="js/all.js"></script>
+    <script>
+function setMap(city) {
+  const maps = {
+    pune: "https://www.google.com/maps?q=Pune%20India&output=embed",
+    noida: "https://www.google.com/maps?q=Greater%20Noida%20India&output=embed",
+    pantnagar: "https://www.google.com/maps?q=Pantnagar%20Uttarakhand%20India&output=embed"
+  };
+  document.getElementById("mapFrame").src = maps[city];
+}
+</script>
+
 	
     <script src="js/custom.js"></script>
 
