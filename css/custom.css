@@ -99,7 +99,7 @@
     background: rgba(255,255,255,0.9);
     padding: 12px 36px;          /* ⬇ less height, ⬅➡ more width */
     border-radius: 12px;
-    margin-left: 32px;
+    margin-left: 28px;
     display:inline-block;
     max-width: 800px;            /* ⬅ wider box */
     width: auto;                 /* adapts to content */
