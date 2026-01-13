@@ -68,6 +68,91 @@
     margin-top: 60px;
 }
 
+
+/* ===============================
+   UNIQUE CAPABILITIES DESIGN
+================================ */
+
+.capabilities-unique {
+    padding: 90px 0;
+}
+
+/* GRID ALIGNMENT */
+.capability-row {
+    margin-top: 60px;
+}
+
+/* CAPABILITY BOX */
+.capability-box {
+    background: #ffffff;
+    padding: 35px 25px 40px;
+    position: relative;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    transition: all 0.35s ease;
+    overflow: hidden;
+}
+
+/* LEFT ACCENT BAR */
+.capability-box::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, #1e90ff, #00bfa5);
+}
+
+/* ICON */
+.cap-icon {
+    display: inline-block;
+    font-size: 36px;
+    color: #00bfa5;
+    margin-bottom: 18px;
+}
+
+/* TITLE */
+.capability-box h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1a2e35;
+}
+
+/* TEXT */
+.capability-box p {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* HOVER EFFECT */
+.capability-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .capability-box {
+        margin-bottom: 25px;
+    }
+}
+
+
+.clouds {
+    margin-top: -10px;
+}
+
+.section-title.text-center h2 {
+    font-size: 42px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #111212, #28F0C0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: -90px;
+}
 </style>
 </head>
 <body class="seo_version">
@@ -122,55 +207,85 @@
 </header>
 
 
-    <div id="capabilities" class="section wb">
-    <div class="container-fuild">
-           
-        <div class="section-title text-center">
-            
-            <h4 class="lead1">
-              <b>  Advanced manufacturing capabilities supported by precision engineering,
-                robust quality systems, and integrated production processes.</b>
-            </h4>
+<svg id="clouds" class="hidden-xs" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 85 100" preserveAspectRatio="none">
+        <path d="M-5 100 Q 0 20 5 100 Z
+            M0 100 Q 5 0 10 100
+            M5 100 Q 10 30 15 100
+            M10 100 Q 15 10 20 100
+            M15 100 Q 20 30 25 100
+            M20 100 Q 25 -10 30 100
+            M25 100 Q 30 10 35 100
+            M30 100 Q 35 30 40 100
+            M35 100 Q 40 10 45 100
+            M40 100 Q 45 50 50 100
+            M45 100 Q 50 20 55 100
+            M50 100 Q 55 40 60 100
+            M55 100 Q 60 60 65 100
+            M60 100 Q 65 50 70 100
+            M65 100 Q 70 20 75 100
+            M70 100 Q 75 45 80 100
+            M75 100 Q 80 30 85 100
+            M80 100 Q 85 20 90 100
+            M85 100 Q 90 50 95 100
+            M90 100 Q 95 25 100 100
+            M95 100 Q 100 15 105 100 Z">
+        </path>
+    </svg>
+
+<div id="capabilities" class="section wb capabilities-unique">
+    <div class="container-fluid">
+
+        <!-- SECTION TITLE -->
+        <div class="section-title text-center wow fadeInUp">
+            <h2><b>Core Capabilities</b></h2>
+            <p class="lead1">
+                Advanced manufacturing capabilities supported by precision engineering,
+                robust quality systems, and integrated production processes.
+            </p>
         </div>
 
-        <div class="row">
+        <div class="row capability-row">
 
             <!-- Injection Molding -->
             <div class="col-md-3 col-sm-6">
-                <div class="capability-card">
+                <div class="capability-box wow slideInUp">
+                    <span class="cap-icon"><i class="fa fa-cogs"></i></span>
                     <h4>Injection Molding</h4>
                     <p>
-                        High-precision injection molding with a wide tonnage range and
-                        advanced process control to ensure consistent quality.
+                        High-precision injection molding with a wide tonnage range
+                        and advanced process control for consistent quality.
                     </p>
                 </div>
             </div>
 
             <!-- Tool Manufacturing -->
             <div class="col-md-3 col-sm-6">
-                <div class="capability-card">
+                <div class="capability-box wow slideInUp" data-wow-delay="0.2s">
+                    <span class="cap-icon"><i class="fa fa-wrench"></i></span>
                     <h4>Tool Manufacturing</h4>
                     <p>
-                        In-house tool design and manufacturing enabling quick turnaround,
-                        cost efficiency, and superior tool quality.
+                        In-house tool design and manufacturing enabling faster
+                        turnaround, cost efficiency, and superior accuracy.
                     </p>
                 </div>
             </div>
 
             <!-- Assembly & Inspection -->
             <div class="col-md-3 col-sm-6">
-                <div class="capability-card">
+                <div class="capability-box wow slideInUp" data-wow-delay="0.4s">
+                    <span class="cap-icon"><i class="fa fa-industry"></i></span>
                     <h4>Assembly & Inspection</h4>
                     <p>
-                        Integrated assembly lines, SPMs, and stringent inspection processes
-                        to meet OEM and Tier-1 standards.
+                        Integrated assembly lines, SPMs, and stringent inspection
+                        systems meeting OEM and Tier-1 standards.
                     </p>
                 </div>
             </div>
 
             <!-- Quality Systems -->
             <div class="col-md-3 col-sm-6">
-                <div class="capability-card">
+                <div class="capability-box wow slideInUp" data-wow-delay="0.6s">
+                    <span class="cap-icon"><i class="fa fa-check-circle"></i></span>
                     <h4>Quality Systems</h4>
                     <p>
                         Robust quality management systems focused on defect prevention,
@@ -225,7 +340,7 @@
     </svg>
 
     <footer class="footer">
-    <div class="container">
+    <div class="container-fuild">
         <div class="row">
 
             <!-- ABOUT COMPANY -->

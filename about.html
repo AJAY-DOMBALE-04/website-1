@@ -40,7 +40,7 @@
     font-weight: 700;
     color: #111;
     margin-bottom: 22px;
-    margin-top: 90px;
+    margin-top: 20px;
 }
 
 .about-points li {
@@ -299,7 +299,7 @@
     background: linear-gradient(135deg, #1FB6FF, #28F0C0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-top: -40px;
+    margin-top: 30px;
     font-size: 40px;
      margin-bottom: 15px;
 }
@@ -385,6 +385,23 @@ footer.footer .widget {
     margin-left: 60px;
     margin-right: 60px;
     margin-top: -90px;
+}
+
+@media (max-width: 768px) {
+
+  .all-page-title {
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 260px;
+    touch-action: pan-x;
+  }
+
+}
+
+.lead1 p {
+    color: #111;
+    font-size: 20px;
 }
 
     </style>
@@ -857,6 +874,30 @@ const journeyObserver = new IntersectionObserver(
 journeyItems.forEach(item => {
     journeyObserver.observe(item);
 });
+
+(function () {
+  const banner = document.querySelector('.all-page-title');
+  if (!banner) return;
+
+  let startX = 0;
+  let currentX = 50;
+
+  banner.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  });
+
+  banner.addEventListener('touchmove', e => {
+    const moveX = e.touches[0].clientX;
+    const diff = startX - moveX;
+
+    currentX += diff * 0.1;
+    currentX = Math.max(0, Math.min(100, currentX));
+
+    banner.style.backgroundPosition = `${currentX}% center`;
+    startX = moveX;
+  });
+})();
+
 </script>
 
 
