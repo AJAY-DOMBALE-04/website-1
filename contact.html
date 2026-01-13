@@ -26,6 +26,11 @@
     <link rel="stylesheet" href="css/versions.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css">
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+
     <style>
         /* ===============================
    WIDER PAGE LAYOUT (SAFE)
@@ -53,6 +58,12 @@
         padding-right: 15px;
     }
 }
+/* Contact page footer fix */
+body.contact-page footer.footer {
+    margin-top: 0;
+}
+
+
 
 
 .contact-maps{
@@ -68,21 +79,223 @@
     
 }
 
+#clouds1{
+    margin-bottom: 0px;
+}
+footer .footer{
+    margin-top: -50px;
+}
+/* ===============================
+   HIGHLIGHTED CONTACT INFO STRIP
+   =============================== */
 
+.contact-info-highlight {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    align-items: center;
+
+    padding: 18px 22px;
+    margin-bottom: 30px;
+
+    background: linear-gradient(135deg, #f4fbfc, #eaf7f8);
+    border-left: 5px solid #007c8a;
+    border-radius: 8px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.contact-info-highlight .info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 15px;
+    font-weight: 600;
+    color: #1f2d3d;
+}
+
+.contact-info-highlight i {
+    font-size: 17px;
+    color: #007c8a;
+}
+
+/* Subtle hover polish */
+.contact-info-highlight .info-item:hover i {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .contact-info-highlight {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 16px;
+    }
+}
+/* ===============================
+   BOLD CONTACT INFO BAR
+   =============================== */
+
+.contact-bold-bar {
+    width: 100%;
+    padding: 24px 30px;
+    margin-bottom: 35px;
+
+    background: linear-gradient(135deg,#1FB6FF,#28F0C0);
+    color: #050505;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    align-items: center;
+
+    border-radius: 6px;
+}
+
+.contact-bold-bar .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 18px;       /* BIG text */
+    font-weight: 600;
+}
+
+.contact-bold-bar i {
+    font-size: 20px;
+    color: #ffd700;        /* gold highlight */
+}
+
+.contact-bold-bar strong {
+    font-weight: 700;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .contact-bold-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        font-size: 17px;
+    }
+}
+/* =========================================
+   CONTACT PAGE – MOBILE RESPONSIVE FIX
+   ========================================= */
+
+/* Prevent horizontal scroll */
+html, body {
+    overflow-x: hidden;
+}
+
+/* Fix container padding on small screens */
+@media (max-width: 768px) {
+
+    .wide-container {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        margin-bottom: 50px;
+    }
+
+    /* CONTACT HEADER */
+    .section-title h3 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    /* CONTACT BOLD BAR */
+    .contact-bold-bar {
+        padding: 18px;
+        gap: 14px;
+        font-size: 16px;
+    }
+
+    .contact-bold-bar .contact-item {
+        font-size: 16px;
+        line-height: 1.5;
+        flex-wrap: wrap;
+    }
+
+    .contact-bold-bar i {
+        font-size: 18px;
+    }
+
+    /* FORM INPUTS */
+    .contact_form .form-control {
+        font-size: 15px;
+        padding: 12px 14px;
+        margin-bottom: 12px;
+    }
+
+    /* SUBMIT BUTTON */
+    #submit {
+        font-size: 16px;
+        padding: 12px;
+        margin-top: 10px;
+    }
+
+    /* MAP BUTTONS */
+    .small-map .btn {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    /* MAP FRAME */
+    #mapFrame {
+        height: 300px !important;
+    }
+
+    /* STACK MAP BELOW FORM */
+    .contact-maps {
+        margin-top: 30px;
+    }
+
+    /* REMOVE SVG GAP */
+    #clouds,
+    #clouds1 {
+        height: 60px;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .section-title h3 {
+        font-size: 24px;
+    }
+
+    .contact-bold-bar {
+        padding: 16px;
+        border-radius: 8px;
+    }
+
+    .contact-bold-bar .contact-item {
+        font-size: 15px;
+    }
+
+    .contact-bold-bar strong {
+        display: inline-block;
+        min-width: 85px;
+    }
+}
 
 
 
     </style>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+     <link rel="stylesheet" href="css/custom.css">
 
+    <!-- Custom CSS -->
+   
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
-<body class="seo_version">
+<body class="seo_version contact-page">
 
     <!-- LOADER -->
 	<div id="preloader">
@@ -168,6 +381,24 @@
                 <h3>Get In Touch</h3>
                 
             </div><!-- end title -->
+            <!-- CONTACT INFO STRIP -->
+<!-- CONTACT INFO HIGHLIGHT -->
+<!-- CONTACT DETAILS BOLD BAR -->
+<div class="contact-bold-bar">
+    <div class="contact-item">
+        <i class="fa fa-map-marker"></i>
+        <strong>Locations:</strong> Pune | Greater Noida | Pantnagar
+    </div>
+    <div class="contact-item">
+        <i class="fa fa-phone"></i>
+        <strong>Phone:</strong> +91-8292733057
+    </div>
+    <div class="contact-item">
+        <i class="fa fa-envelope"></i>
+        <strong>Email:</strong> prabhat.kumar@sanjaygroup.in
+    </div>
+</div>
+
 
             <div class="row">
                 <div class="col-md-6">
@@ -264,7 +495,6 @@
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
-                        
                         <h3>Sanjay Techno Plast Pvt. Ltd.</h3>
                     </div>
                     <p>
@@ -279,7 +509,7 @@
             <div class="col-md-3 col-sm-3 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
-                        <h3>Contact Details</h3>
+                        <h3 class="contact">Contact Details</h3>
                     </div>
 
                     <ul class="footer-links">
@@ -298,8 +528,7 @@
                     </ul><!-- end links -->
                 </div>
             </div><!-- end col -->
-
-            <!-- INFORMATION -->
+             <!-- INFORMATION -->
             <div class="col-md-3 col-sm-3 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
@@ -309,13 +538,12 @@
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="case-study.html">Case Study</a></li>
+                        <li><a href="infrastructure.html">Infrastructure</a></li>
+                        <li><a href="Products.html">Products</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul><!-- end links -->
                 </div>
             </div><!-- end col -->
-
             <!-- SOCIAL -->
             <div class="col-md-2 col-sm-2 col-xs-12">
                 <div class="widget clearfix">
@@ -323,19 +551,21 @@
                         <h3>Social</h3>
                     </div>
                     <ul class="footer-links social-md">
-                        <li><a class="fb" href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
+                       <li><a class="fb" href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
                         <li><a class="gi" href="#"><i class="fa fa-github"></i> Github</a></li>
                         <li><a class="tw" href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
                         <li><a class="pi" href="#"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
                     </ul><!-- end links -->
                 </div>
             </div><!-- end col -->
+            
 
+            
         </div><!-- end row -->
     </div><!-- end container -->
 </footer><!-- end footer -->
 
-    <!-- COPYRIGHTS -->
+<!-- COPYRIGHTS -->
 <div class="copyrights">
     <div class="container">
         <div class="footer-distributed">
@@ -345,9 +575,6 @@
                 </p>
             </div>
 
-            <div class="footer-right">
-               
-            </div>
         </div>
     </div>
 </div>
