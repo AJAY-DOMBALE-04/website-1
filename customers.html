@@ -35,9 +35,121 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-   
+   <style>
 
-</style>
+.lead1 {
+    font-size: 18px;
+    color: #555555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+
+}
+
+/* SECTION SPACING */
+#customers-partners {
+    padding: 80px 0;
+}
+
+/* INFO CARD SPACING */
+.info-cards {
+    margin-bottom: 10px;
+    margin-top: 30px;
+    
+}
+
+
+col-md-4 col-sm-6  {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 15px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* CATEGORY TITLE */
+.logo-category {
+    margin: 50px 0 25px;
+    font-weight: 700;
+    color: #1a2e35;
+}
+
+/* STATIC LOGO WALL */
+.logo-wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    animation: logoReveal 1.5s ease forwards;
+    opacity: 0;
+}
+
+.logo-wall img {
+    max-width: 150px;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+/* ONE-TIME ANIMATION */
+@keyframes logoReveal {
+    from {
+        transform: translateX(-80px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* MARQUEE */
+.logo-marquee {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.logo-track {
+    display: flex;
+    gap: 60px;
+    width: max-content;
+    animation: scrollLeft 30s linear infinite;
+    align-items: center;
+}
+
+.logo-track img {
+    max-width: 140px;
+    max-height: 75px;
+    object-fit: contain;
+}
+
+/* SCROLL ANIMATION */
+@keyframes scrollLeft {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .logo-wall img,
+    .logo-track img {
+        max-width: 110px;
+        max-height: 60px;
+    }
+}
+
+
+#clouds {
+    margin-top: -30px;
+    margin-bottom: 0px;
+}
+
+   </style>
+
+
 </head>
 <body class="seo_version">
 
@@ -90,26 +202,7 @@
     </nav>
 </header>
 
-
-    <div class="all-page-title" style="background-image:url(images/pattern-4.png);">
-        <div class="container text-center">
-            <h1>Customers / Partners</h1>
-        </div>
-		<!--Page -->
-        <div class="page-info">
-            <div class="container">
-            	<div class="inner-container">
-                    <ul class="bread-crumb">
-                        <li><a href="index.html">Home</a></li>
-                        <li><span>Customers / Partners</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!--End Page-->
-    </div><!-- end section -->
-
-    <!-- <svg id="clouds" class="hidden-xs" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 85 100" preserveAspectRatio="none">
+<svg id="clouds" class="hidden-xs" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 85 100" preserveAspectRatio="none">
         <path d="M-5 100 Q 0 20 5 100 Z
             M0 100 Q 5 0 10 100
             M5 100 Q 10 30 15 100
@@ -132,61 +225,115 @@
             M90 100 Q 95 25 100 100
             M95 100 Q 100 15 105 100 Z">
         </path>
-    </svg> -->
+    </svg>
 
-   <div id="customers-partners" class="section wb">
-    <div class="container">
+<div id="customers-partners" class="section wb">
+    <div class="container-fuild">
 
         <!-- SECTION TITLE -->
-        <div class="section-title text-center">
-            <h4 class="lead">
-                <b>Trusted by Industry Leaders</b>
-            </h4>
-            <p class="lead">
-                We proudly serve leading OEMs and Tier-1 automotive suppliers,
-                building long-term partnerships based on trust, quality, and
-                performance excellence.
+        <div class="section-title text-center wow fadeInUp">
+            <h2><b>Customers & Partners</b></h2>
+            <p class="lead1">
+                Trusted by leading OEMs and Tier-1 automotive suppliers through
+                quality, reliability, and long-term collaboration.
             </p>
         </div>
 
-        <!-- CONTENT ROW -->
-        <div class="row text-center">
+        <!-- INFORMATION CARDS (KEEP AS IS) -->
+        <div class="row text-center info-cards">
 
             <div class="col-md-4 col-sm-6">
-                <div class="capability-card">
+                <div class="capability-card wow fadeInUp">
                     <h4>OEM Partnerships</h4>
                     <p>
                         Strategic collaborations with leading automotive OEMs,
-                        delivering high-quality plastic components that meet
+                        delivering high-quality plastic components aligned with
                         global standards.
                     </p>
                 </div>
             </div>
 
             <div class="col-md-4 col-sm-6">
-                <div class="capability-card">
+                <div class="capability-card wow fadeInUp" data-wow-delay="0.2s">
                     <h4>Tier-1 Suppliers</h4>
                     <p>
-                        Long-term associations with Tier-1 suppliers focused on
-                        reliability, process excellence, and on-time delivery.
+                        Strong associations with Tier-1 suppliers focused on
+                        process excellence, reliability, and on-time delivery.
                     </p>
                 </div>
             </div>
 
             <div class="col-md-4 col-sm-6">
-                <div class="capability-card">
+                <div class="capability-card wow fadeInUp" data-wow-delay="0.4s">
                     <h4>Trusted Relationships</h4>
                     <p>
-                        Partnerships built on transparency, continuous improvement,
-                        and consistent performance across programs and platforms.
+                        Long-term partnerships built on transparency,
+                        continuous improvement, and consistent performance.
                     </p>
                 </div>
             </div>
 
         </div>
 
+        <!-- STATIC LOGO WALL (ANIMATE IN ONCE) -->
+        <h3 class="logo-category text-center wow fadeInUp">Our Key Customers</h3>
+
+        <div class="logo-wall">
+            <img src="uploads/logo_01.png">
+            <img src="uploads/logo_02.png">
+            <img src="uploads/logo_03.png">
+            <img src="uploads/logo_04.png">
+            <img src="uploads/logo_05.png">
+            <img src="uploads/logo_06.png">
+            <img src="uploads/logo_07.png">
+            <img src="uploads/logo_08.png">
+            <img src="uploads/logo_01 (21).png">
+            <img src="uploads/logo_01 (22).png">
+            <img src="uploads/logo_01 (11).png">
+            <img src="uploads/logo_01 (12).png">
+            <img src="uploads/logo_01 (13).png">
+            <img src="uploads/logo_01 (14).png">
+            <img src="uploads/logo_01 (15).png">
+            <img src="uploads/logo_01 (16).png">
+            <img src="uploads/logo_01 (20).png">
+            <img src="uploads/logo_01 (18).png">
+            <img src="uploads/logo_01 (19).png">
+            <img src="uploads/logo_01 (23).png">
+            <img src="uploads/logo_01 (24).png">
+            <img src="uploads/logo_01 (25).png">
+            <img src="uploads/logo_01 (26).png">
+        </div>
+
+<br>
+<br>
+<br>
+
+        <!-- MOVING LOGOS (OPTIONAL CONTINUOUS SCROLL) -->
+        <h3 class="logo-category text-center wow fadeInUp">OEM & Tier-1 Network</h3>
+
+        <div class="logo-marquee">
+            <div class="logo-track">
+                <img src="uploads/logo_01.png">
+                <img src="uploads/logo_02.png">
+                <img src="uploads/logo_03.png">
+                <img src="uploads/logo_04.png">
+                <img src="uploads/logo_05.png">
+                <img src="uploads/logo_06.png">
+                <img src="uploads/logo_07.png">
+                <img src="uploads/logo_08.png">
+
+                <!-- duplicate for seamless loop -->
+                <img src="uploads/logo_01.png">
+                <img src="uploads/logo_02.png">
+                <img src="uploads/logo_03.png">
+                <img src="uploads/logo_04.png">
+            </div>
+        </div>
+
     </div>
 </div>
+
+
 
 
    
@@ -230,7 +377,7 @@
     </svg>
 
     <footer class="footer">
-    <div class="container">
+    <div class="container-fuild">
         <div class="row">
 
             <!-- ABOUT COMPANY -->
