@@ -333,17 +333,7 @@ body.seo_version #preloader{
   color: #444;
   line-height: 1.6;
 }
-/* FORCE BULLETS FOR AWARD LIST */
-.award-list {
-  list-style-type: disc;
-  padding-left: 22px;
-  margin-top: 10px;
-}
 
-.award-list li {
-  list-style-type: disc;
-  display: list-item;
-}
 
 
 /* Animation */
@@ -925,6 +915,83 @@ footer.footer .widget {
     margin-left: 60px;
     margin-right: 60px;
     margin-top: 0px;
+}
+
+.container-fuild1 {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: -90px;
+}
+
+/* ===============================
+   FOOTER TEXT VISIBILITY FIX
+   =============================== */
+
+/* Footer headings */
+footer.footer h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;              /* dark heading */
+    margin-bottom: 14px;
+}
+
+/* Footer paragraph */
+footer.footer p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #222;              /* darker readable text */
+    margin-bottom: 0;
+}
+
+/* Footer list items */
+footer.footer .footer-links li {
+    font-size: 16px;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+/* Footer links */
+footer.footer .footer-links a {
+    font-size: 16px;
+    color: #222;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+footer.footer .footer-links a:hover {
+    color: #007c8a;           /* blue-green highlight */
+    text-decoration: none;
+}
+
+/* Social icons */
+footer.footer .social-md i {
+    font-size: 16px;
+    color: #007c8a;
+}
+
+/* Widget spacing */
+footer.footer .widget {
+    padding: 0 20px;
+}
+
+/* ===============================
+   COPYRIGHT TEXT
+   =============================== */
+
+.footer-company-name {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+}
+
+
+.container-fuild {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .container-fuild1 {
