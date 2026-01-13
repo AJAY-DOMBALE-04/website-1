@@ -161,6 +161,75 @@ footer.footer .widget {
     margin-right: 60px;
     margin-top: -90px;
 }
+/* =====================================
+   RESPONSIVE PRODUCTS GRID – FIX
+   ===================================== */
+
+/* Default (Desktop ≥1200px) */
+#da-thumbs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* Tablets (≤1199px) */
+@media (max-width: 1199px) {
+    #da-thumbs {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Mobile Landscape (≤768px) */
+@media (max-width: 768px) {
+    #da-thumbs {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 18px;
+    }
+
+    .post-media img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+    }
+
+    .card-overlay {
+        padding: 16px;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
+
+    .card-half-overlay {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+/* Small Mobile (≤480px) */
+@media (max-width: 480px) {
+    #da-thumbs {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-half-overlay {
+        font-size: 13px;
+    }
+}
+/* Disable hover effects on touch devices */
+@media (hover: none) {
+    .post-media:hover .card-overlay {
+        transform: none;
+        opacity: 1;
+    }
+}
+
 
 
     
