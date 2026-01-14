@@ -444,6 +444,20 @@ footer.footer .widget {
         margin-bottom: 25px;
     }
 }
+/* LOADER FIX */
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: #ffffff;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
 
     </style>
 
@@ -938,7 +952,14 @@ journeyItems.forEach(item => {
     startX = moveX;
   });
 })();
-
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+        const loader = document.getElementById("preloader");
+        if (loader) {
+            loader.classList.add("hide");
+        }
+    }, 500); // 👈 0.8 seconds (perfect balance)
+});
 </script>
 
 
