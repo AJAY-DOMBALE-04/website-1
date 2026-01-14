@@ -108,11 +108,12 @@
 }
 
 /* Text styling */
-#home .big-tagline h2
+#home .big-tagline h1
  {
     color: #000000;
    margin-top: 8px;
-    font-size: 40px;         /* tighter vertical spacing */
+    font-size: 50px;    
+    font-weight: 500;     /* tighter vertical spacing */
 }
 #home .big-tagline p{
     color: #000000;
@@ -275,6 +276,7 @@ body.seo_version #preloader{
   position: relative;
   list-style: none;
   padding: 60px 0 120px 90px; /* bottom padding FIXES footer overlap */
+  margin-bottom: 50px;
 }
 
 /* Vertical line */
