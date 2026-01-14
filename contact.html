@@ -624,6 +624,16 @@ function setMap(city) {
   };
   document.getElementById("mapFrame").src = maps[city];
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+        const loader = document.getElementById("preloader");
+        if (loader) {
+            loader.classList.add("hide");
+        }
+    }, 800); // 👈 0.8 seconds (perfect balance)
+});
+
 </script>
 <script type="application/ld+json">
 {

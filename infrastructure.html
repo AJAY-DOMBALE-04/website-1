@@ -783,6 +783,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+        const loader = document.getElementById("preloader");
+        if (loader) {
+            loader.classList.add("hide");
+        }
+    }, 800); // 👈 0.8 seconds (perfect balance)
+});
+
 </script>
 
 
