@@ -334,7 +334,7 @@ footer.footer .widget {
         <div class="container-text-center"><h3>Our Products</h3></div>
         
             <div id="da-thumbs" class="da-thumbs portfolio">
-                <div class="post-media pitem item-w1 item-h1 cat1">
+                <div class="post-media pitem item-w1 item-h1 cat1 product-gallery">
     <!-- MAIN CLICK IMAGE -->
     <a href="uploads/Interior1.png"
        rel="prettyPhoto[interior]"
@@ -375,7 +375,7 @@ footer.footer .widget {
        style="display:none;"></a>
 </div>
 
-               <div class="post-media pitem item-w1 item-h1 cat2">
+               <div class="post-media pitem item-w1 item-h1 cat2 product-gallery">
     <a href="uploads/HVAC.png"
        rel="prettyPhoto[hvac]"
        title="HVAC Components & Assemblies">
@@ -403,7 +403,7 @@ footer.footer .widget {
              <a href="uploads/Automotive HVAC Components10.png" rel="prettyPhoto[hvac]" style="display:none;"></a>
 </div>
 
-                <div class="post-media pitem item-w1 item-h1 cat1">
+                <div class="post-media pitem item-w1 item-h1 cat1 product-gallery">
     <a href="uploads/DSC_8456.jpg"
        rel="prettyPhoto[cooling]"
        title="Engine Cooling Components">
@@ -427,7 +427,7 @@ footer.footer .widget {
     <a href="uploads/DSC_8368.jpg" rel="prettyPhoto[cooling]" style="display:none;"></a>
 </div>
 
-               <div class="post-media pitem item-w1 item-h1 cat3">
+               <div class="post-media pitem item-w1 item-h1 cat3 product-gallery">
     <a href="uploads/Cable1.png"
        rel="prettyPhoto[electrical]"
        title="Electrical Applications">
@@ -445,13 +445,13 @@ footer.footer .widget {
 
     <a href="uploads/Cable2.png" rel="prettyPhoto[electrical]" style="display:none;"></a>
     <a href="uploads/Antenna Cap.png" rel="prettyPhoto[electrical]" style="display:none;"></a>
-    <a href="uploads/Picture1.png" rel="prettyPhoto[electrical]" style="display:none;"></a>
+    <a href="uploads/DSC_8410.jpg" rel="prettyPhoto[electrical]" style="display:none;"></a>
     <a href="uploads/MIC Housing.png" rel="prettyPhoto[electrical]" style="display:none;"></a>
     
 
 </div>
 
-              <div class="post-media pitem item-w1 item-h1 cat2">
+              <div class="post-media pitem item-w1 item-h1 cat2 product-gallery">
     <a href="uploads/Seating10.png"
        rel="prettyPhoto[seating]"
        title="Seating Components">
@@ -476,7 +476,7 @@ footer.footer .widget {
           <a href="uploads/Seating7.png" rel="prettyPhoto[seating]" style="display:none;"></a>
 </div>
 
-                <div class="post-media pitem item-w1 item-h1 cat1">
+                <div class="post-media pitem item-w1 item-h1 cat1 product-gallery">
     <a href="uploads/Exterier5.png"
        rel="prettyPhoto[exterior]"
        title="Automotive Exterior Parts">
@@ -501,7 +501,7 @@ footer.footer .widget {
     <a href="uploads/Exterier4.png" rel="prettyPhoto[exterior]" style="display:none;"></a>
 </div>
 
-                <div class="post-media pitem item-w1 item-h1 cat1">
+                <div class="post-media pitem item-w1 item-h1 cat1 product-gallery">
                     <a href="uploads/2_Wheeler1.png" data-rel="prettyPhoto[gal]">
                         <img src="uploads/2_Wheeler1.png" alt="Two-Wheeler Parts" class="img-responsive" loading="lazy">
                         <div class="card-overlay">
@@ -511,7 +511,7 @@ footer.footer .widget {
                         </div>
                     </a>
                 </div>
-                <div class="post-media pitem item-w1 item-h1 cat1">
+                <div class="post-media pitem item-w1 item-h1 cat1 product-gallery">
     <a href="uploads/Antenna Cap.png"
        rel="prettyPhoto[caps]"
        title="Protective Caps & Covers">
@@ -529,7 +529,7 @@ footer.footer .widget {
 
     <a href="uploads/Cover1.png" rel="prettyPhoto[caps]" style="display:none;"></a>
      <a href="uploads/Cover2.png" rel="prettyPhoto[caps]" style="display:none;"></a>
-      <a href="uploads/Cover3.png" rel="prettyPhoto[caps]" style="display:none;"></a>
+      <a href="uploads/Cover31.png" rel="prettyPhoto[caps]" style="display:none;"></a>
        <a href="uploads/Cover4.png" rel="prettyPhoto[caps]" style="display:none;"></a>
         <a href="uploads/Cover5.png" rel="prettyPhoto[caps]" style="display:none;"></a>
 </div>
@@ -680,16 +680,16 @@ window.addEventListener("scroll", function () {
     <script src="js/all.js"></script>
     <!-- ALL PLUGINS -->
      <script>
-$(document).ready(function () {
-    $("a[rel^='prettyPhoto']").prettyPhoto({
-        theme: 'pp_default',
-        overlay_gallery: true,   // 🔥 REQUIRED
-        slideshow: false,
-        autoplay_slideshow: false,
-        social_tools: false,
-        deeplinking: false
-    });
-});
+// $(document).ready(function () {
+//     $("a[rel^='prettyPhoto']").prettyPhoto({
+//         theme: 'pp_default',
+//         overlay_gallery: true,   // 🔥 REQUIRED
+//         slideshow: false,
+//         autoplay_slideshow: false,
+//         social_tools: false,
+//         deeplinking: false
+//     });
+// });
 
 document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
@@ -701,10 +701,43 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
+<!-- jQuery (required) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- Magnific Popup -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 
     <script src="js/custom.js"></script>
 	
 	<script src="js/hoverdir.js"></script>   
+    <script>
+$(document).ready(function () {
+
+  $('.product-gallery').each(function () {
+    $(this).magnificPopup({
+      delegate: 'a',
+      type: 'image',
+      gallery: {
+        enabled: true,
+        navigateByImgClick: true,
+        arrowMarkup:
+          '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>'
+      },
+      image: {
+        titleSrc: function(item) {
+          return item.el.attr('title') || '';
+        }
+      },
+      closeOnContentClick: false,
+      fixedContentPos: true,
+      mainClass: 'mfp-fade'
+    });
+  });
+
+});
+</script>
+
 
 </body>
 </html>

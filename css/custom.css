@@ -51,9 +51,7 @@
     align-items: center;
 }
 
-/* ===============================
-   HOME BACKGROUND SLIDESHOW
-   =============================== */
+
 /* ===============================
    HOME BACKGROUND SLIDER (MANUAL)
    =============================== */
@@ -1007,4 +1005,77 @@ footer.footer .widget {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+}
+/* Force consistent lightbox size */
+.mfp-img {
+  max-height: 80vh !important;
+  width: auto !important;
+  object-fit: contain;
+}
+
+.mfp-content {
+  max-width: 85vw;
+}
+
+/* Bigger title */
+.mfp-title {
+  font-size: 18px;
+  line-height: 1.4;
+  padding-top: 10px;
+}
+
+/* Always-visible arrows */
+.mfp-arrow {
+  opacity: 1 !important;
+}
+
+.mfp-arrow:before,
+.mfp-arrow:after {
+  opacity: 1 !important;
+}
+/* Remove dark overlay background */
+.mfp-bg {
+    background: #ffffff !important;   /* pure white */
+    opacity: 1 !important;
+}
+
+/* Lightbox container background */
+
+
+/* Optional: subtle shadow instead of dark bg */
+.mfp-img {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    background: #fff;
+}
+/* Semi-transparent dark background */
+.mfp-bg {
+    background: rgba(0, 0, 0, 0.65) !important;
+    opacity: 1 !important;
+}
+/* Force consistent lightbox size */
+.mfp-img {
+  max-height: 80vh !important;
+  width: auto !important;
+  object-fit: contain;
+}
+
+.mfp-content {
+  max-width: 85vw;
+}
+
+/* Bigger title */
+.mfp-title {
+  font-size: 18px;
+  line-height: 1.4;
+  padding-top: 10px;
+}
+
+/* Always-visible arrows */
+.mfp-arrow {
+  opacity: 1 !important;
+}
+
+.mfp-arrow:before,
+.mfp-arrow:after {
+  opacity: 1 !important;
 }

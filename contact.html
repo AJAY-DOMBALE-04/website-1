@@ -152,49 +152,99 @@ footer .footer{
    BOLD CONTACT INFO BAR
    =============================== */
 
+/* ===============================
+   CONTACT BOLD BAR – RESPONSIVE
+   =============================== */
+
 .contact-bold-bar {
     width: 100%;
     padding: 24px 30px;
     margin-bottom: 35px;
 
-    background: linear-gradient(135deg,#1FB6FF,#28F0C0);
+    background: linear-gradient(135deg, #1FB6FF, #28F0C0);
     color: #050505;
 
     display: flex;
     flex-wrap: wrap;
-    gap: 35px;
+    gap: 32px;
     align-items: center;
+    
 
-    border-radius: 6px;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
+/* Each contact item */
 .contact-bold-bar .contact-item {
     display: flex;
     align-items: center;
     gap: 12px;
 
-    font-size: 18px;       /* BIG text */
+    font-size: 18px;
     font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
 }
 
+/* Icons */
 .contact-bold-bar i {
     font-size: 20px;
-    color: #ffd700;        /* gold highlight */
+    color: #ffd700;
+    min-width: 22px;
 }
 
-.contact-bold-bar strong {
-    font-weight: 700;
+/* ===============================
+   TABLET & MOBILE
+   =============================== */
+@media (max-width: 992px) {
+    .contact-bold-bar {
+        justify-content: flex-start;
+        gap: 24px;
+    }
 }
 
-/* Mobile */
+/* ===============================
+   MOBILE STACK FIX
+   =============================== */
 @media (max-width: 768px) {
     .contact-bold-bar {
         flex-direction: column;
         align-items: flex-start;
         gap: 16px;
-        font-size: 17px;
+
+        padding: 18px 20px;
+    }
+
+    .contact-bold-bar .contact-item {
+        font-size: 16px;
+        white-space: normal;   /* 🔑 allow wrapping */
+    }
+
+    .contact-bold-bar i {
+        font-size: 18px;
     }
 }
+
+/* ===============================
+   SMALL MOBILE (≤480px)
+   =============================== */
+@media (max-width: 480px) {
+    .contact-bold-bar {
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .contact-bold-bar .contact-item {
+        font-size: 15px;
+    }
+
+    .contact-bold-bar strong {
+        display: inline-block;
+        min-width: 85px; /* aligns labels nicely */
+    }
+}
+
+
 /* =========================================
    CONTACT PAGE – MOBILE RESPONSIVE FIX
    ========================================= */
@@ -399,8 +449,7 @@ collaboration across India.
 </p>
 
             </div><!-- end title -->
-            <!-- CONTACT INFO STRIP -->
-<!-- CONTACT INFO HIGHLIGHT -->
+            
 <!-- CONTACT DETAILS BOLD BAR -->
 <div class="contact-bold-bar">
     <div class="contact-item">
