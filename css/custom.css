@@ -636,6 +636,8 @@ body.seo_version #preloader{
 
 
 
+
+
 /* ===== NAVBAR TAB SIZE INCREASE ===== */
 
 .menu-top > li > a {
@@ -655,6 +657,7 @@ body.seo_version #preloader{
 .menu-top > li > a.active {
     font-weight: 700;
 }
+
 
 
 
