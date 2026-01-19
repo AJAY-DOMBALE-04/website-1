@@ -36,7 +36,7 @@
 <meta property="og:title" content="Automotive Plastic Components Manufacturer | Sanjay Techno Plast">
 <meta property="og:description" content="Trusted manufacturer of automotive and industrial plastic components delivering precision injection molded solutions across India.">
 <meta property="og:type" content="website">
-
+ <link rel="shortcut icon" href="uploads/STPL_icon.jpg" type="image/x-icon" />
     <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="css/bootstrap.css">
 
@@ -110,7 +110,7 @@
 .feature-line {
     height: 3px;
     width: 100%;
-    background: linear-gradient(90deg, #0e8d86 70%, #eaeaea 70%);
+    background: linear-gradient(135deg, #1FB6FF, #28F0C0);
     border-radius: 2px;
 }
 
@@ -391,6 +391,18 @@ footer.footer .widget {
     margin: 0 auto;
     display: block;
 }
+/* Initial hidden state */
+.feature-line {
+    opacity: 0;
+    transform: translateX(-10px); /* tiny movement, not off-screen */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* When visible */
+.feature-line.show {
+    opacity: 1;
+    transform: translateX(0);
+}
 
 
 
@@ -530,12 +542,12 @@ footer.footer .widget {
 
                         <div class="feature-item">
                             <span>Advanced Tooling & Engineering</span>
-                            <div class="feature-line"></div>
+                            <div class="feature-line "></div>
                         </div>
 
                         <div class="feature-item">
                             <span>OEM & Tier-1 Quality Standards</span>
-                            <div class="feature-line"></div>
+                            <div class="feature-line "></div>
                         </div>
 
                         <div class="feature-item">
@@ -924,6 +936,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const lines = document.querySelectorAll(".feature-line");
+
+    function revealLines() {
+        const trigger = window.innerHeight * 0.85;
+
+        lines.forEach(line => {
+            const top = line.getBoundingClientRect().top;
+            if (top < trigger) {
+                line.classList.add("show");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", revealLines);
+    revealLines(); // run once on load
+});
+</script>
+
+
 
     <!-- ALL JS FILES -->
      <script src="js/animate.js"></script>
