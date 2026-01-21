@@ -303,7 +303,7 @@
 
 .section-title h1{
      font-size: 42px;
-    font-weight: 800;
+    font-weight: 900;
     background: linear-gradient(135deg, #1FB6FF, #28F0C0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -470,6 +470,137 @@ footer.footer .widget {
     pointer-events: none;
 }
 
+/* ===============================
+   ABOUT SECTION – LAYOUT BASE
+   =============================== */
+
+.about-block {
+    padding: 90px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.about-block:last-child {
+    border-bottom: none;
+}
+
+/* Reverse layout spacing */
+.about-block.reverse {
+    background: rgba(0, 0, 0, 0.015);
+}
+
+/* ===============================
+   TEXT COLUMN
+   =============================== */
+
+.about-text {
+    max-width: 540px;
+}
+
+/* Section Headings */
+.about-text h2 {
+    font-size: 34px;
+    font-weight: 800;
+    color: #1f2d3d;
+    margin-bottom: 18px;
+    position: relative;
+}
+
+/* Accent underline */
+.about-text h2::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 4px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #1FB6FF, #28F0C0);
+    border-radius: 2px;
+}
+
+/* Paragraph styling */
+.about-pt {
+    font-size: 17px;
+    line-height: 1.9;
+    color: #444;
+    margin-bottom: 28px;
+}
+
+/* ===============================
+   IMAGE STYLING
+   =============================== */
+
+.about-img {
+    width: 92%;
+    max-width: 520px;
+    border-radius: 16px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 24px 45px rgba(0, 0, 0, 0.18);
+}
+
+/* ===============================
+   SCROLL ANIMATION
+   =============================== */
+
+.slide-left,
+.slide-right {
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: transform, opacity;
+}
+
+/* Soft motion */
+.slide-left {
+    transform: translateX(-35px);
+}
+
+.slide-right {
+    transform: translateX(35px);
+}
+
+/* Reveal */
+.slide-left.show,
+.slide-right.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 991px) {
+    .about-text {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .about-img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-block {
+        padding: 70px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-text h2 {
+        font-size: 26px;
+    }
+
+    .about-pt {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .about-block {
+        padding: 50px 0;
+    }
+}
 
     </style>
 
@@ -556,13 +687,7 @@ footer.footer .widget {
         <div class="row about-block">
             <div class="col-md-6 about-text slide-left">
                 <h2>Company Overview</h2>
-                <ul class="about-points">
-    <li><i class="fa-solid fa-circle-check"></i> Professionally managed manufacturer of automotive and industrial plastic components</li>
-    <li><i class="fa-solid fa-gear"></i> Engineering-driven manufacturing and quality systems</li>
-    <li><i class="fa-solid fa-award"></i> Customized plastic solutions meeting global standards</li>
-    <li><i class="fa-solid fa-shield-halved"></i> High precision, consistency, and reliability</li>
-</ul>
-
+                <p class="about-pt">Sanjay Techno Plast Pvt. Ltd. is a professionally managed manufacturing company specializing in automotive and industrial plastic components. With a strong foundation in engineering excellence, we deliver customized solutions that meet global quality standards.</p>
             </div>
             <div class="col-md-6 text-center slide-right">
                 <img src="images/factory2.jpg" class="about-img" alt="Company Overview" loading="lazy">
@@ -575,15 +700,10 @@ footer.footer .widget {
                 <img src="images/Mold1.png" class="about-img" alt="Vision & Values" loading="lazy">
             </div>
             <div class="col-md-6 about-text slide-right">
-                <h2>Vision & Core Values</h2>
-                <ul class="about-points">
-                    <li><i class="fa-solid fa-circle-check"></i> To be a preferred global partner for plastic components</li>
-                    <li><i class="fa-solid fa-gear"></i>Focus on innovation, reliability, and operational excellence</li>
-                    <li><i class="fa-solid fa-award"></i>Customer-first approach</li>
-                    <li><i class="fa-solid fa-shield-halved"></i>Sustained & strategic growth</li>
-                    <li><i class="fa-solid fa-shield-halved"></i>Relentless drive for Excellence</li>
-                    <li><i class="fa-solid fa-shield-halved"></i>Integrity & long-term partnerships</li>
-                </ul>
+                <h2>Our Vision</h2>
+                <p class="about-pt">To be a preferred global partner for high-quality plastic components by consistently driving innovation, maintaining uncompromising standards of quality, and achieving operational excellence. </p>
+                <h2>Our Core Values</h2>
+                <p class="about-pt">Our core values are rooted in a strong customer-first approach, a relentless drive for excellence, and a commitment to sustained growth. We operate with integrity and focus on building long-term partnerships based on trust, quality, and continuous improvement across all aspects of our business.</p>
             </div>
         </div>
 
@@ -591,12 +711,7 @@ footer.footer .widget {
         <div class="row about-block">
             <div class="col-md-6 about-text slide-left">
                 <h2>Management Philosophy</h2>
-                <ul class="about-points">
-                    <li><i class="fa-solid fa-circle-check"></i>Engineering-driven and data-based decision making</li>
-                    <li><i class="fa-solid fa-gear"></i>Customer-focused execution and transparency</li>
-                    <li><i class="fa-solid fa-award"></i>Empowering teams through modern manufacturing practices</li>
-                    <li><i class="fa-solid fa-shield-halved"></i>Building sustainable growth through continuous improvement</li>
-                </ul>
+                <p class="about-pt">Our management philosophy is centered on continuous improvement, strategic technology adoption, and the development of our people as the foundation of sustainable success. We believe in fostering a culture of accountability, collaboration, and innovation, where every team member is empowered to contribute to quality, efficiency, and customer satisfaction.</p>
             </div>
             <div class="col-md-6 text-center slide-right">
                 <img src="images/Sanjaygroup_img_DSC_8593.jpg" class="about-img" alt="Management Philosophy" loading="lazy">
